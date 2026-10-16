@@ -36,199 +36,147 @@ export default function HomePage({ onOpenQuote }) {
   return (
     <div className="flex flex-col">
 
-      {/* ══════ 1. HERO (Exact to Mockup Image 2) ══════════════════ */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-[#040C1E]">
+      {/* ══════ 1. HERO ══════════════════════════════════════════════ */}
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-[#040C1E]">
 
-        {/* High-tech Laptop Background Photo */}
+        {/* Background: laptop photo + dark gradient overlay */}
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1600&q=80"
-            alt="Workspace tech de développement"
+            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1600&q=80"
+            alt=""
             className="w-full h-full object-cover object-center opacity-40"
           />
-          {/* Dark gradient leaving the laptop center visible while keeping text crisp */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#040C1E] via-[#040C1E]/95 via-45% to-[#040C1E]/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#040C1E] via-[#040C1E]/90 to-[#040C1E]/40" />
         </div>
 
-        {/* Geometric corner stripes (Blue & Yellow) as in mockup Image 2 */}
-        <div className="absolute bottom-0 right-0 w-44 h-44 overflow-hidden pointer-events-none z-10">
-          <div className="absolute -bottom-20 -right-8 w-44 h-24 bg-[#0284C7] rotate-45 transform" />
-          <div className="absolute -bottom-16 -right-16 w-36 h-36 bg-[#FBBF24] rotate-45 transform shadow-lg" />
+        {/* Bottom-right corner decorations */}
+        <div className="absolute bottom-0 right-0 w-32 h-32 z-10 pointer-events-none overflow-hidden">
+          <div className="absolute bottom-[-20px] right-[-20px] w-28 h-14 bg-[#0284C7] rotate-45" />
+          <div className="absolute bottom-[-10px] right-[-10px] w-20 h-20 bg-[#FBBF24] rotate-45 opacity-90" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-28 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center w-full">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
 
-          {/* Left: Text & CTA (7 Cols) */}
-          <div className="lg:col-span-7">
-            
-            {/* 1. Top Capsule Tag */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-950/70 border border-sky-400/30 text-sky-200 text-xs font-semibold backdrop-blur-md mb-4 shadow-sm">
-              <Rocket className="w-3.5 h-3.5 text-[#FBBF24] fill-[#FBBF24]" />
-              <span>Votre partenaire digital de confiance</span>
-            </div>
+            {/* ── LEFT COLUMN ── */}
+            <div className="lg:col-span-7">
 
-            {/* 2. Main Headline (Refined font size: neither too small nor too big) */}
-            <h1 className="text-3xl sm:text-4xl lg:text-[2.65rem] font-black text-white leading-[1.18] mb-4 tracking-tight">
-              Des solutions numériques{' '}
-              <span className="text-[#FBBF24] relative inline-block">
-                sur mesure
-                <span className="absolute -bottom-1 left-0 right-0 h-[3px] bg-[#FBBF24] rounded-full" />
-              </span>{' '}
-              pour un avenir{' '}
-              <span className="text-[#38BDF8]">plus connecté</span>
-            </h1>
-
-            {/* 3. Description */}
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6 max-w-xl">
-              Global Software Innovation est une équipe de passionnés en technologie, spécialisée dans le développement logiciel, les réseaux, la cybersécurité et le déploiement d'applications. Nous aidons les entreprises et les organisations à innover, se protéger et performer dans le digital.
-            </p>
-
-            {/* 4. Action Buttons */}
-            <div className="flex flex-wrap items-center gap-3.5 mb-8">
-              <button
-                onClick={onOpenQuote}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#FBBF24] hover:bg-[#F59E0B] text-slate-950 font-black text-xs sm:text-sm shadow-xl shadow-amber-500/20 active:scale-95 transition-all cursor-pointer"
-              >
-                <ArrowRight className="w-4 h-4 stroke-[2.5]" />
-                <span>Découvrir nos services</span>
-              </button>
-
-              <button
-                onClick={() => navigate('portfolio')}
-                className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-slate-900/60 hover:bg-slate-800/80 border border-sky-400/40 text-white font-bold text-xs sm:text-sm backdrop-blur-sm transition-all cursor-pointer"
-              >
-                <div className="w-6 h-6 rounded-full bg-[#1565C0] flex items-center justify-center text-white">
-                  <Play className="w-3 h-3 fill-white ml-0.5" />
-                </div>
-                <span>Voir notre portfolio</span>
-              </button>
-            </div>
-
-            {/* 5. Bottom 3 Trust Pillars (Directly inside hero as in Mockup 2) */}
-            <div className="pt-5 border-t border-slate-800/80 grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-lg bg-sky-950 border border-sky-500/30 flex items-center justify-center text-sky-400 shrink-0">
-                  <Crosshair className="w-4 h-4" />
-                </div>
-                <div>
-                  <div className="text-xs font-bold text-white">Innovation</div>
-                  <div className="text-[11px] text-slate-400">Des solutions modernes</div>
-                </div>
+              {/* Badge pill */}
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0F1F3D]/80 border border-sky-500/30 text-sky-200 text-[11px] font-semibold backdrop-blur mb-5">
+                <Rocket className="w-3 h-3 text-[#FBBF24]" />
+                Votre partenaire digital de confiance
               </div>
 
-              <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-lg bg-sky-950 border border-sky-500/30 flex items-center justify-center text-sky-400 shrink-0">
-                  <Shield className="w-4 h-4" />
-                </div>
-                <div>
-                  <div className="text-xs font-bold text-white">Sécurité</div>
-                  <div className="text-[11px] text-slate-400">Vos données protégées</div>
-                </div>
+              {/* H1 */}
+              <h1 className="text-[2rem] sm:text-[2.4rem] lg:text-[2.8rem] font-black text-white leading-[1.2] tracking-tight mb-3">
+                Des solutions numériques{' '}
+                <span className="text-[#FBBF24] relative inline-block">
+                  sur mesure
+                  <span className="absolute -bottom-0.5 left-0 right-0 h-[3px] bg-[#FBBF24] rounded-full" />
+                </span>
+                {' '}pour un avenir{' '}
+                <span className="text-[#38BDF8]">plus connecté</span>
+              </h1>
+
+              {/* Yellow accent bar */}
+              <div className="w-12 h-[3px] bg-[#FBBF24] rounded-full mb-5" />
+
+              {/* Description */}
+              <p className="text-[12.5px] sm:text-[13px] text-slate-300 leading-relaxed mb-7 max-w-[480px]">
+                Global Software Innovation est une équipe de passionnés en technologie, spécialisée dans le développement logiciel, les réseaux, la cybersécurité et le déploiement d'applications. Nous aidons les entreprises et les organisations à innover, se protéger et performer dans le digital.
+              </p>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-wrap gap-3 mb-8">
+                <button
+                  onClick={onOpenQuote}
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#FBBF24] hover:bg-[#F59E0B] text-slate-950 font-black text-sm shadow-lg shadow-amber-500/20 active:scale-95 transition-all cursor-pointer"
+                >
+                  <ArrowRight className="w-4 h-4" />
+                  Découvrir nos services
+                </button>
+                <button
+                  onClick={() => navigate('portfolio')}
+                  className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-[#0F1F3D]/70 hover:bg-[#0F1F3D] border border-sky-500/30 text-white font-semibold text-sm backdrop-blur transition-all cursor-pointer"
+                >
+                  <div className="w-6 h-6 rounded-full bg-[#1565C0] flex items-center justify-center">
+                    <Play className="w-3 h-3 fill-white ml-0.5" />
+                  </div>
+                  Voir notre portfolio
+                </button>
               </div>
 
-              <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-lg bg-sky-950 border border-sky-500/30 flex items-center justify-center text-sky-400 shrink-0">
-                  <Users className="w-4 h-4" />
-                </div>
-                <div>
-                  <div className="text-xs font-bold text-white">Accompagnement</div>
-                  <div className="text-[11px] text-slate-400">Une équipe à vos côtés</div>
+              {/* Bottom 3 pillars */}
+              <div className="border-t border-slate-800 pt-4 grid grid-cols-3 gap-4">
+                {[
+                  { icon: Crosshair, label: 'Innovation', sub: 'Des solutions modernes' },
+                  { icon: Shield,    label: 'Sécurité',   sub: 'Vos données protégées' },
+                  { icon: Users,     label: 'Accompagnement', sub: 'Une équipe à vos côtés' },
+                ].map(({ icon: Icon, label, sub }) => (
+                  <div key={label} className="flex items-center gap-2">
+                    <div className="w-7 h-7 rounded-lg bg-sky-950/60 border border-sky-500/20 text-sky-400 flex items-center justify-center shrink-0">
+                      <Icon className="w-3.5 h-3.5" />
+                    </div>
+                    <div>
+                      <div className="text-[11px] font-bold text-white">{label}</div>
+                      <div className="text-[10px] text-slate-500">{sub}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* ── RIGHT COLUMN — Glassmorphic card ── */}
+            <div className="hidden lg:block lg:col-span-5">
+              <div className="relative rounded-2xl overflow-hidden p-px bg-gradient-to-b from-sky-400/50 to-sky-800/20 shadow-2xl shadow-sky-500/20">
+                <div className="bg-[#071329]/85 backdrop-blur-xl rounded-2xl p-6 border border-sky-400/20">
+
+                  {/* Brand header */}
+                  <div className="flex items-center gap-4 mb-5 pb-4 border-b border-slate-800">
+                    <img
+                      src="/logo.png"
+                      alt="GSI"
+                      className="w-16 h-16 rounded-xl object-contain bg-slate-950 p-1.5 border border-sky-400/30 shadow shrink-0"
+                    />
+                    <div>
+                      <div className="text-[15px] font-black text-white tracking-wide uppercase">GLOBAL SOFTWARE</div>
+                      <div className="text-[13px] font-black text-[#FBBF24] tracking-widest uppercase mt-1">INNOVATION</div>
+                      <div className="text-[11px] text-slate-400 mt-1">Innover • Développer • Sécuriser • Ensemble</div>
+                    </div>
+                  </div>
+
+                  {/* 4 Stats grid */}
+                  <div className="grid grid-cols-2 gap-3 mb-5">
+                    {[
+                      { icon: Users,     color: 'bg-blue-600/30 border-blue-400/50 text-sky-400',    value: '7+',   label: "Années d'expérience" },
+                      { icon: Code2,     color: 'bg-purple-600/30 border-purple-400/50 text-purple-300', value: '50+',  label: 'Projets réalisés' },
+                      { icon: UserCheck, color: 'bg-emerald-600/30 border-emerald-400/50 text-emerald-400', value: '100%', label: 'Satisfaction client' },
+                      { icon: Handshake, color: 'bg-amber-600/30 border-amber-400/50 text-amber-400', value: '30+',  label: 'Partenaires & Clients' },
+                    ].map(({ icon: Icon, color, value, label }) => (
+                      <div key={label} className="bg-slate-900/70 border border-slate-700/50 rounded-xl p-3 flex items-center justify-between group hover:border-sky-400/40 transition-colors">
+                        <div className="flex items-center gap-3">
+                          <div className={`w-9 h-9 rounded-full border flex items-center justify-center shrink-0 ${color}`}>
+                            <Icon className="w-4 h-4" />
+                          </div>
+                          <div>
+                            <div className="text-[15px] font-black text-[#FBBF24]">{value}</div>
+                            <div className="text-[11px] text-slate-400 leading-tight">{label}</div>
+                          </div>
+                        </div>
+                        <ChevronRight className="w-4 h-4 text-slate-600 group-hover:text-slate-400 shrink-0" />
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Italic slogan */}
+                  <div className="text-right font-serif italic text-[#FBBF24] text-base font-bold -rotate-1 pr-1">
+                    Ensemble, créons l'innovation !
+                  </div>
                 </div>
               </div>
             </div>
 
           </div>
-
-          {/* Right: Glassmorphic Tech Card + 4 Stat Badges (5 Cols) */}
-          <div className="hidden lg:flex lg:col-span-5 flex-col items-end relative">
-            
-            {/* Outer Glowing Glassmorphic Container */}
-            <div className="w-full relative rounded-3xl p-[1.5px] bg-gradient-to-b from-sky-400/60 via-sky-500/20 to-transparent shadow-2xl shadow-sky-500/20">
-              <div className="bg-[#071329]/90 backdrop-blur-xl rounded-[22px] p-4 sm:p-5 border border-sky-400/20">
-                
-                {/* Brand Header */}
-                <div className="flex items-center gap-3 mb-4 pb-3.5 border-b border-slate-800/80">
-                  <img 
-                    src="/logo.png" 
-                    alt="Global Software Innovation" 
-                    className="w-12 h-12 rounded-xl object-contain bg-slate-950 p-1 border border-sky-400/40 shadow-md shrink-0"
-                  />
-                  <div>
-                    <div className="text-xs font-black text-white tracking-wide uppercase leading-none">GLOBAL SOFTWARE</div>
-                    <div className="text-[11px] font-black text-[#FBBF24] tracking-widest uppercase mt-0.5 leading-tight">INNOVATION</div>
-                    <div className="text-[9.5px] text-slate-300 mt-1">Innover • Développer • Sécuriser • Ensemble</div>
-                  </div>
-                </div>
-
-                {/* 4 Stats Grid */}
-                <div className="grid grid-cols-2 gap-2.5">
-                  {/* Stat 1: 7+ Années */}
-                  <div className="bg-slate-900/80 border border-slate-700/60 rounded-xl p-2.5 flex items-center justify-between hover:border-sky-400/50 transition-colors group">
-                    <div className="flex items-center gap-2">
-                      <div className="w-7 h-7 rounded-full bg-blue-600/30 border border-blue-400/50 text-sky-400 flex items-center justify-center shrink-0">
-                        <Users className="w-3.5 h-3.5" />
-                      </div>
-                      <div>
-                        <div className="text-xs font-black text-white group-hover:text-[#FBBF24] transition-colors">7+</div>
-                        <div className="text-[9.5px] text-slate-300 leading-tight">Années d'expérience</div>
-                      </div>
-                    </div>
-                    <ChevronRight className="w-3 h-3 text-slate-500 group-hover:text-white transition-colors" />
-                  </div>
-
-                  {/* Stat 2: 50+ Projets */}
-                  <div className="bg-slate-900/80 border border-slate-700/60 rounded-xl p-2.5 flex items-center justify-between hover:border-sky-400/50 transition-colors group">
-                    <div className="flex items-center gap-2">
-                      <div className="w-7 h-7 rounded-full bg-purple-600/30 border border-purple-400/50 text-purple-300 flex items-center justify-center shrink-0">
-                        <Code2 className="w-3.5 h-3.5" />
-                      </div>
-                      <div>
-                        <div className="text-xs font-black text-white group-hover:text-[#FBBF24] transition-colors">50+</div>
-                        <div className="text-[9.5px] text-slate-300 leading-tight">Projets réalisés</div>
-                      </div>
-                    </div>
-                    <ChevronRight className="w-3 h-3 text-slate-500 group-hover:text-white transition-colors" />
-                  </div>
-
-                  {/* Stat 3: 100% Satisfaction */}
-                  <div className="bg-slate-900/80 border border-slate-700/60 rounded-xl p-2.5 flex items-center justify-between hover:border-sky-400/50 transition-colors group">
-                    <div className="flex items-center gap-2">
-                      <div className="w-7 h-7 rounded-full bg-emerald-600/30 border border-emerald-400/50 text-emerald-400 flex items-center justify-center shrink-0">
-                        <UserCheck className="w-3.5 h-3.5" />
-                      </div>
-                      <div>
-                        <div className="text-xs font-black text-white group-hover:text-[#FBBF24] transition-colors">100%</div>
-                        <div className="text-[9.5px] text-slate-300 leading-tight">Satisfaction client</div>
-                      </div>
-                    </div>
-                    <ChevronRight className="w-3 h-3 text-slate-500 group-hover:text-white transition-colors" />
-                  </div>
-
-                  {/* Stat 4: 30+ Partenaires */}
-                  <div className="bg-slate-900/80 border border-slate-700/60 rounded-xl p-2.5 flex items-center justify-between hover:border-sky-400/50 transition-colors group">
-                    <div className="flex items-center gap-2">
-                      <div className="w-7 h-7 rounded-full bg-amber-600/30 border border-amber-400/50 text-amber-400 flex items-center justify-center shrink-0">
-                        <Handshake className="w-3.5 h-3.5" />
-                      </div>
-                      <div>
-                        <div className="text-xs font-black text-white group-hover:text-[#FBBF24] transition-colors">30+</div>
-                        <div className="text-[9.5px] text-slate-300 leading-tight">Partenaires &amp; Clients</div>
-                      </div>
-                    </div>
-                    <ChevronRight className="w-3.5 h-3.5 text-slate-500 group-hover:text-white transition-colors" />
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-            {/* Handwritten Energetic Slogan */}
-            <div className="mt-3.5 mr-2 font-serif italic font-bold text-sm sm:text-base text-[#FBBF24] -rotate-2 drop-shadow-md">
-              Ensemble, créons l'innovation !
-            </div>
-
-          </div>
-
         </div>
       </section>
 

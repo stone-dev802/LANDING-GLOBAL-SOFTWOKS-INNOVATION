@@ -262,11 +262,32 @@ export const portfolioProjects = [
 /* ─── TEAM ─────────────────────────────────────────────────────────── */
 export const teamMembers = [
   {
-    name: "Moussa Kamdem",
-    role: "CEO & Architecte Solutions",
-    desc: "10 ans d'expérience en architecture systèmes distribués et transformation digitale.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
-    linkedin: "#",
+    id: "dr-stone",
+    name: "NDZANA ADJI SVENILYSTONE ASHTON THOMAS",
+    alias: "DR_STONE",
+    role: "Développeur Fullstack Web & Mobile",
+    subtitle: "Frontend • Backend • Web • Mobile",
+    category: "Fullstack Lead",
+    specialties: ["Frontend Web Moderne", "Backend & APIs", "Applications Mobiles", "Architecture Logicielle"],
+    skills: [
+      "React.js / Next.js",
+      "React Native",
+      "Node.js / Express",
+      "Tailwind CSS",
+      "PostgreSQL / MongoDB",
+      "API REST & Webhooks",
+      "Architecture MVC & Microservices",
+      "Git & Déploiement CI/CD"
+    ],
+    experience: "Ingénierie Fullstack",
+    projectsCount: "15+ Réalisations",
+    desc: "Développeur Fullstack polyvalent maîtrisant l'intégralité du cycle de vie des applications : interfaces web ergonomiques, architectures backend scalables et applications mobiles iOS / Android.",
+    fullBio: "Connu sous le pseudonyme DR_STONE, Ndzana Adji Svenilystone Ashton Thomas est un développeur fullstack passionné et rigoureux. Il conçoit des solutions logicielles complètes et modernes en alliant design d'expérience utilisateur (UI/UX réactif), performance serveur (APIs rapides et sécurisées) et portabilité mobile.",
+    image: "/team/dr_stone.png",
+    linkedin: "https://github.com/stone-dev802",
+    github: "https://github.com/stone-dev802",
+    email: "ndzanathomas119@gmail.com",
+    badge: "Core Developer",
   },
   {
     name: "Diane Ngo Biyeck",
