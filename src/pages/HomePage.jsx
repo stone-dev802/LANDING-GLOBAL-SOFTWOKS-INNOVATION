@@ -1,5 +1,22 @@
 import React from 'react';
-import { ArrowRight, Play, CheckCircle2, Zap, Shield, Award, Users, Smile, Star } from 'lucide-react';
+import { 
+  ArrowRight, 
+  Play, 
+  CheckCircle2, 
+  Zap, 
+  Shield, 
+  Award, 
+  Users, 
+  Smile, 
+  Star, 
+  Rocket, 
+  ChevronRight, 
+  Code2, 
+  Target, 
+  Handshake, 
+  UserCheck, 
+  Crosshair 
+} from 'lucide-react';
 import { Link, useRouter } from '../router';
 import { companyInfo, heroPillars, servicesData, processSteps, portfolioProjects, aiBotKnowledge } from '../data/content';
 
@@ -19,101 +36,199 @@ export default function HomePage({ onOpenQuote }) {
   return (
     <div className="flex flex-col">
 
-      {/* ══════ 1. HERO ══════════════════════════════════════════ */}
-      <section className="relative min-h-[92vh] flex items-center overflow-hidden bg-[#060D1F]">
+      {/* ══════ 1. HERO (Exact to Mockup Image 2) ══════════════════ */}
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-[#040C1E]">
 
-        {/* Background photo with dark overlay */}
+        {/* High-tech Laptop Background Photo */}
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&q=80"
-            alt="Équipe Global Softworks au travail"
-            className="w-full h-full object-cover object-center opacity-25"
+            src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1600&q=80"
+            alt="Workspace tech de développement"
+            className="w-full h-full object-cover object-center opacity-40"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#060D1F] via-[#060D1F]/90 to-[#060D1F]/40" />
+          {/* Dark gradient leaving the laptop center visible while keeping text crisp */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#040C1E] via-[#040C1E]/95 via-45% to-[#040C1E]/40" />
         </div>
 
-        {/* Decorative diagonal yellow stripe (like mockups) */}
-        <div className="absolute right-0 bottom-0 w-2 h-full bg-[#FBBF24] opacity-80" />
+        {/* Geometric corner stripes (Blue & Yellow) as in mockup Image 2 */}
+        <div className="absolute bottom-0 right-0 w-44 h-44 overflow-hidden pointer-events-none z-10">
+          <div className="absolute -bottom-20 -right-8 w-44 h-24 bg-[#0284C7] rotate-45 transform" />
+          <div className="absolute -bottom-16 -right-16 w-36 h-36 bg-[#FBBF24] rotate-45 transform shadow-lg" />
+        </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-28 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center w-full">
 
-          {/* Left: Text */}
-          <div>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FBBF24]/10 border border-[#FBBF24]/30 text-[#FBBF24] text-xs font-bold uppercase tracking-widest mb-6">
-              <span className="w-2 h-2 rounded-full bg-[#FBBF24] animate-pulse"/>
-              Votre partenaire tech &amp; digital
+          {/* Left: Text & CTA (7 Cols) */}
+          <div className="lg:col-span-7">
+            
+            {/* 1. Top Capsule Tag */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-950/70 border border-sky-400/30 text-sky-200 text-xs font-semibold backdrop-blur-md mb-4 shadow-sm">
+              <Rocket className="w-3.5 h-3.5 text-[#FBBF24] fill-[#FBBF24]" />
+              <span>Votre partenaire digital de confiance</span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-[1.1] mb-6">
+            {/* 2. Main Headline (Refined font size: neither too small nor too big) */}
+            <h1 className="text-3xl sm:text-4xl lg:text-[2.65rem] font-black text-white leading-[1.18] mb-4 tracking-tight">
               Des solutions numériques{' '}
-              <span className="text-[#FBBF24]">sur mesure</span>{' '}
+              <span className="text-[#FBBF24] relative inline-block">
+                sur mesure
+                <span className="absolute -bottom-1 left-0 right-0 h-[3px] bg-[#FBBF24] rounded-full" />
+              </span>{' '}
               pour un avenir{' '}
               <span className="text-[#38BDF8]">plus connecté</span>
             </h1>
 
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-10 max-w-xl">
-              {companyInfo.description}
+            {/* 3. Description */}
+            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6 max-w-xl">
+              Global Software Innovation est une équipe de passionnés en technologie, spécialisée dans le développement logiciel, les réseaux, la cybersécurité et le déploiement d'applications. Nous aidons les entreprises et les organisations à innover, se protéger et performer dans le digital.
             </p>
 
-            {/* CTAs */}
-            <div className="flex flex-wrap gap-4 mb-10">
+            {/* 4. Action Buttons */}
+            <div className="flex flex-wrap items-center gap-3.5 mb-8">
               <button
                 onClick={onOpenQuote}
-                className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-[#FBBF24] hover:bg-[#F59E0B] text-slate-950 font-black text-sm sm:text-base shadow-xl shadow-amber-500/20 transition-all active:scale-95 cursor-pointer"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#FBBF24] hover:bg-[#F59E0B] text-slate-950 font-black text-xs sm:text-sm shadow-xl shadow-amber-500/20 active:scale-95 transition-all cursor-pointer"
               >
-                Découvrir nos services <ArrowRight className="w-4 h-4"/>
+                <ArrowRight className="w-4 h-4 stroke-[2.5]" />
+                <span>Découvrir nos services</span>
               </button>
 
               <button
                 onClick={() => navigate('portfolio')}
-                className="inline-flex items-center gap-2.5 px-7 py-4 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold text-sm sm:text-base backdrop-blur-sm transition-all"
+                className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-slate-900/60 hover:bg-slate-800/80 border border-sky-400/40 text-white font-bold text-xs sm:text-sm backdrop-blur-sm transition-all cursor-pointer"
               >
-                <div className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center">
-                  <Play className="w-3.5 h-3.5 fill-current ml-0.5"/>
+                <div className="w-6 h-6 rounded-full bg-[#1565C0] flex items-center justify-center text-white">
+                  <Play className="w-3 h-3 fill-white ml-0.5" />
                 </div>
-                Voir notre portfolio
+                <span>Voir notre portfolio</span>
               </button>
             </div>
 
-            {/* Trust micro-badges */}
-            <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-400">
-              {['Devis gratuit en 24h','Support continu inclus','Sécurité certifiée'].map((t) => (
-                <span key={t} className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0"/>
-                  {t}
-                </span>
-              ))}
-            </div>
-          </div>
+            {/* 5. Bottom 3 Trust Pillars (Directly inside hero as in Mockup 2) */}
+            <div className="pt-5 border-t border-slate-800/80 grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="flex items-center gap-2.5">
+                <div className="w-8 h-8 rounded-lg bg-sky-950 border border-sky-500/30 flex items-center justify-center text-sky-400 shrink-0">
+                  <Crosshair className="w-4 h-4" />
+                </div>
+                <div>
+                  <div className="text-xs font-bold text-white">Innovation</div>
+                  <div className="text-[11px] text-slate-400">Des solutions modernes</div>
+                </div>
+              </div>
 
-          {/* Right: Floating Brand Logo + Stats card */}
-          <div className="hidden lg:flex flex-col gap-5">
-            <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-6 flex items-center gap-6 shadow-2xl">
-              <img 
-                src="/logo.png" 
-                alt="Global Software Innovation" 
-                className="w-20 h-20 rounded-2xl object-contain bg-slate-950 p-2 border border-sky-500/30 shadow-lg shadow-sky-500/20 shrink-0"
-              />
-              <div>
-                <div className="text-xl font-black text-white tracking-tight">GLOBAL SOFTWARE</div>
-                <div className="text-sm font-bold text-[#FBBF24] tracking-widest uppercase mb-1">INNOVATION</div>
-                <div className="text-xs text-slate-300">Innover • Développer • Sécuriser • Ensemble</div>
+              <div className="flex items-center gap-2.5">
+                <div className="w-8 h-8 rounded-lg bg-sky-950 border border-sky-500/30 flex items-center justify-center text-sky-400 shrink-0">
+                  <Shield className="w-4 h-4" />
+                </div>
+                <div>
+                  <div className="text-xs font-bold text-white">Sécurité</div>
+                  <div className="text-[11px] text-slate-400">Vos données protégées</div>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-2.5">
+                <div className="w-8 h-8 rounded-lg bg-sky-950 border border-sky-500/30 flex items-center justify-center text-sky-400 shrink-0">
+                  <Users className="w-4 h-4" />
+                </div>
+                <div>
+                  <div className="text-xs font-bold text-white">Accompagnement</div>
+                  <div className="text-[11px] text-slate-400">Une équipe à vos côtés</div>
+                </div>
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
-              {companyInfo.stats.map((s) => (
-                <div key={s.label} className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-5 hover:bg-white/10 transition-colors">
-                  <div className="text-3xl font-black text-[#FBBF24] mb-1">{s.value}</div>
-                  <div className="text-xs font-semibold text-white">{s.label}</div>
+          </div>
+
+          {/* Right: Glassmorphic Tech Card + 4 Stat Badges (5 Cols) */}
+          <div className="hidden lg:flex lg:col-span-5 flex-col items-end relative">
+            
+            {/* Outer Glowing Glassmorphic Container */}
+            <div className="w-full relative rounded-3xl p-[1.5px] bg-gradient-to-b from-sky-400/60 via-sky-500/20 to-transparent shadow-2xl shadow-sky-500/20">
+              <div className="bg-[#071329]/90 backdrop-blur-xl rounded-[22px] p-4 sm:p-5 border border-sky-400/20">
+                
+                {/* Brand Header */}
+                <div className="flex items-center gap-3 mb-4 pb-3.5 border-b border-slate-800/80">
+                  <img 
+                    src="/logo.png" 
+                    alt="Global Software Innovation" 
+                    className="w-12 h-12 rounded-xl object-contain bg-slate-950 p-1 border border-sky-400/40 shadow-md shrink-0"
+                  />
+                  <div>
+                    <div className="text-xs font-black text-white tracking-wide uppercase leading-none">GLOBAL SOFTWARE</div>
+                    <div className="text-[11px] font-black text-[#FBBF24] tracking-widest uppercase mt-0.5 leading-tight">INNOVATION</div>
+                    <div className="text-[9.5px] text-slate-300 mt-1">Innover • Développer • Sécuriser • Ensemble</div>
+                  </div>
                 </div>
-              ))}
+
+                {/* 4 Stats Grid */}
+                <div className="grid grid-cols-2 gap-2.5">
+                  {/* Stat 1: 7+ Années */}
+                  <div className="bg-slate-900/80 border border-slate-700/60 rounded-xl p-2.5 flex items-center justify-between hover:border-sky-400/50 transition-colors group">
+                    <div className="flex items-center gap-2">
+                      <div className="w-7 h-7 rounded-full bg-blue-600/30 border border-blue-400/50 text-sky-400 flex items-center justify-center shrink-0">
+                        <Users className="w-3.5 h-3.5" />
+                      </div>
+                      <div>
+                        <div className="text-xs font-black text-white group-hover:text-[#FBBF24] transition-colors">7+</div>
+                        <div className="text-[9.5px] text-slate-300 leading-tight">Années d'expérience</div>
+                      </div>
+                    </div>
+                    <ChevronRight className="w-3 h-3 text-slate-500 group-hover:text-white transition-colors" />
+                  </div>
+
+                  {/* Stat 2: 50+ Projets */}
+                  <div className="bg-slate-900/80 border border-slate-700/60 rounded-xl p-2.5 flex items-center justify-between hover:border-sky-400/50 transition-colors group">
+                    <div className="flex items-center gap-2">
+                      <div className="w-7 h-7 rounded-full bg-purple-600/30 border border-purple-400/50 text-purple-300 flex items-center justify-center shrink-0">
+                        <Code2 className="w-3.5 h-3.5" />
+                      </div>
+                      <div>
+                        <div className="text-xs font-black text-white group-hover:text-[#FBBF24] transition-colors">50+</div>
+                        <div className="text-[9.5px] text-slate-300 leading-tight">Projets réalisés</div>
+                      </div>
+                    </div>
+                    <ChevronRight className="w-3 h-3 text-slate-500 group-hover:text-white transition-colors" />
+                  </div>
+
+                  {/* Stat 3: 100% Satisfaction */}
+                  <div className="bg-slate-900/80 border border-slate-700/60 rounded-xl p-2.5 flex items-center justify-between hover:border-sky-400/50 transition-colors group">
+                    <div className="flex items-center gap-2">
+                      <div className="w-7 h-7 rounded-full bg-emerald-600/30 border border-emerald-400/50 text-emerald-400 flex items-center justify-center shrink-0">
+                        <UserCheck className="w-3.5 h-3.5" />
+                      </div>
+                      <div>
+                        <div className="text-xs font-black text-white group-hover:text-[#FBBF24] transition-colors">100%</div>
+                        <div className="text-[9.5px] text-slate-300 leading-tight">Satisfaction client</div>
+                      </div>
+                    </div>
+                    <ChevronRight className="w-3 h-3 text-slate-500 group-hover:text-white transition-colors" />
+                  </div>
+
+                  {/* Stat 4: 30+ Partenaires */}
+                  <div className="bg-slate-900/80 border border-slate-700/60 rounded-xl p-2.5 flex items-center justify-between hover:border-sky-400/50 transition-colors group">
+                    <div className="flex items-center gap-2">
+                      <div className="w-7 h-7 rounded-full bg-amber-600/30 border border-amber-400/50 text-amber-400 flex items-center justify-center shrink-0">
+                        <Handshake className="w-3.5 h-3.5" />
+                      </div>
+                      <div>
+                        <div className="text-xs font-black text-white group-hover:text-[#FBBF24] transition-colors">30+</div>
+                        <div className="text-[9.5px] text-slate-300 leading-tight">Partenaires &amp; Clients</div>
+                      </div>
+                    </div>
+                    <ChevronRight className="w-3.5 h-3.5 text-slate-500 group-hover:text-white transition-colors" />
+                  </div>
+                </div>
+
+              </div>
             </div>
-            {/* Floating label */}
-            <div className="italic text-right text-[#FBBF24] font-bold text-sm">
+
+            {/* Handwritten Energetic Slogan */}
+            <div className="mt-3.5 mr-2 font-serif italic font-bold text-sm sm:text-base text-[#FBBF24] -rotate-2 drop-shadow-md">
               Ensemble, créons l'innovation !
             </div>
+
           </div>
+
         </div>
       </section>
 
