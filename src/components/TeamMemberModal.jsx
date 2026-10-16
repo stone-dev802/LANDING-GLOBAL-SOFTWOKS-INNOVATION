@@ -112,7 +112,7 @@ export default function TeamMemberModal({ member, isOpen, onClose, onOpenQuote }
 
                 {/* Social Links */}
                 <div className="flex items-center justify-center sm:justify-start gap-2.5 mt-4">
-                  {member.github && (
+                  {member.github && member.github !== '#' && (
                     <a
                       href={member.github}
                       target="_blank"

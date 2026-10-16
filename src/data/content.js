@@ -317,9 +317,9 @@ export const teamMembers = [
     desc: "Ingénieur en travaux informatique spécialisé en réseaux, systèmes et cybersécurité. Expert en administration d'infrastructures, ethical hacking et analyse SOC.",
     fullBio: "Connu sous le pseudonyme Kelvyn_Telecom, Diffo Ngassop Kevin Dibril est un ingénieur en travaux informatiques option Réseau, Système et Cybersécurité. Polyvalent entre la posture offensive (Ethical Hacking, pentesting) et défensive (SOC Analyst, administration sécurisée), il déploie des architectures réseau haute disponibilité et protège les systèmes contre les intrusions critiques.",
     image: "/team/kelvyn_telecom.png",
-    linkedin: "#",
-    github: "#",
-    email: "contact@globalsoftware-innovation.com",
+    linkedin: "https://www.linkedin.com/in/kelvyndiffo",
+    github: "https://github.com/kelvyndiffo8-design",
+    email: "kelvyndiffo8@gmail.com",
     badge: "Security Lead",
   },
   {

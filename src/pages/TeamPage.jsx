@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Linkedin, ArrowRight, Sparkles, ExternalLink, Code2 } from 'lucide-react';
+import { Linkedin, Github, Mail, ArrowRight, Sparkles, ExternalLink, Code2 } from 'lucide-react';
 import { teamMembers } from '../data/content';
 import TeamMemberModal from '../components/TeamMemberModal';
 
@@ -79,23 +79,46 @@ export default function TeamPage({ onOpenQuote }) {
                       </span>
                     ) : <span />}
 
-                    {/* LinkedIn or External Link icon */}
-                    {member.linkedin && member.linkedin !== '#' ? (
-                      <a 
-                        href={member.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={(e) => e.stopPropagation()}
-                        className="w-9 h-9 rounded-full bg-white/20 hover:bg-[#0A66C2] text-white flex items-center justify-center backdrop-blur-md border border-white/30 transition-colors shadow-sm"
-                        aria-label="LinkedIn"
-                      >
-                        <Linkedin className="w-4 h-4" />
-                      </a>
-                    ) : (
-                      <span className="w-9 h-9 rounded-full bg-white/15 text-white flex items-center justify-center backdrop-blur-md border border-white/20 opacity-0 group-hover:opacity-100 transition-opacity">
-                        <ExternalLink className="w-4 h-4" />
-                      </span>
-                    )}
+                    {/* Social Quick Links on Card */}
+                    <div className="flex items-center gap-1.5">
+                      {member.github && member.github !== '#' && (
+                        <a 
+                          href={member.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          className="w-8 h-8 rounded-full bg-white/20 hover:bg-slate-900 text-white flex items-center justify-center backdrop-blur-md border border-white/30 transition-all shadow-sm"
+                          aria-label="GitHub"
+                          title="Profil GitHub"
+                        >
+                          <Github className="w-3.5 h-3.5" />
+                        </a>
+                      )}
+                      {member.linkedin && member.linkedin !== '#' && (
+                        <a 
+                          href={member.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          className="w-8 h-8 rounded-full bg-white/20 hover:bg-[#0A66C2] text-white flex items-center justify-center backdrop-blur-md border border-white/30 transition-all shadow-sm"
+                          aria-label="LinkedIn"
+                          title="Profil LinkedIn"
+                        >
+                          <Linkedin className="w-3.5 h-3.5" />
+                        </a>
+                      )}
+                      {member.email && (
+                        <a 
+                          href={`mailto:${member.email}`}
+                          onClick={(e) => e.stopPropagation()}
+                          className="w-8 h-8 rounded-full bg-white/20 hover:bg-emerald-600 text-white flex items-center justify-center backdrop-blur-md border border-white/30 transition-all shadow-sm"
+                          aria-label="Email"
+                          title="Envoyer un email"
+                        >
+                          <Mail className="w-3.5 h-3.5" />
+                        </a>
+                      )}
+                    </div>
                   </div>
 
                   {/* Name and Role overlay on photo bottom */}
