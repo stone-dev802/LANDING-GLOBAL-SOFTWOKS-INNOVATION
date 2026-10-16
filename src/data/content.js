@@ -1,0 +1,372 @@
+export const companyInfo = {
+  name: "GLOBAL SOFTWARE INNOVATION",
+  shortName: "GSI",
+  slogan: "Innover • Développer • Sécuriser • Ensemble",
+  tagline: "Des solutions numériques sur mesure pour un avenir plus connecté",
+  description:
+    "Global Software Innovation est une équipe de passionnés en technologie, spécialisée dans le développement logiciel, les réseaux, la cybersécurité et le déploiement d'applications. Nous aidons les entreprises et les organisations à innover, se protéger et performer dans le digital.",
+  phone: "+237 696 459 762",
+  email: "contact@globalsoftware-innovation.com",
+  address: "Yaoundé, Cameroun",
+  hours: "Lun - Ven : 8h - 18h",
+  stats: [
+    { value: "7+",    label: "Années d'expérience",     icon: "Award" },
+    { value: "50+",   label: "Projets réalisés",         icon: "CheckCircle" },
+    { value: "100%",  label: "Satisfaction client",      icon: "Smile" },
+    { value: "30+",   label: "Partenaires & Clients",    icon: "Users" },
+  ],
+};
+
+/* ─── HERO PILLARS ─────────────────────────────────────────────────── */
+export const heroPillars = [
+  { title: "Innovation continue",       desc: "Veille technologique permanente" },
+  { title: "Experts qualifiés",         desc: "Ingénieurs certifiés & séniors"  },
+  { title: "Solutions sur mesure",      desc: "Conçues pour vos contraintes"    },
+  { title: "Accompagnement 24/7",       desc: "Support & suivi réactif"         },
+];
+
+/* ─── SERVICES ─────────────────────────────────────────────────────── */
+export const servicesData = [
+  {
+    id: "dev-logiciel",
+    icon: "Code2",
+    title: "Développement Logiciel",
+    shortDesc: "Applications web, mobiles, desktop et solutions sur mesure adaptées à vos objectifs métier.",
+    fullDesc: "Nous concevons des logiciels robustes, évolutifs et sécurisés. Du MVP agile au système d'entreprise complexe, nous maîtrisons l'ensemble de la chaîne de développement avec les technologies les plus modernes.",
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&q=80",
+    features: [
+      "Applications Web modernes (React, Next.js, Node.js)",
+      "Applications Mobiles cross-platform (React Native, Flutter)",
+      "Logiciels de gestion & desktop sur mesure",
+      "Conception d'APIs REST & GraphQL",
+      "Architecture microservices & scalabilité",
+    ],
+    badge: "Populaire",
+  },
+  {
+    id: "reseaux",
+    icon: "Network",
+    title: "Réseaux & Infrastructure",
+    shortDesc: "Installation, configuration et sécurisation intégrale de vos réseaux d'entreprise.",
+    fullDesc: "Une infrastructure réseau performante est la colonne vertébrale de votre productivité. Nos spécialistes déploient et optimisent vos architectures physiques et virtuelles.",
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80",
+    features: [
+      "Câblage structuré, baies de brassage & fibre optique",
+      "Configuration routeurs & commutateurs (Cisco, Mikrotik)",
+      "Mise en place de VPN sécurisés multi-sites",
+      "Surveillance réseau en temps réel",
+      "Audit de performance réseau",
+    ],
+    badge: "Indispensable",
+  },
+  {
+    id: "cybersecurite",
+    icon: "ShieldCheck",
+    title: "Cybersécurité",
+    shortDesc: "Protection des données, audit de vulnérabilités, pare-feu nouvelle génération.",
+    fullDesc: "Protégez votre patrimoine informationnel contre les ransomwares, intrusions et fuites de données.",
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80",
+    features: [
+      "Tests d'intrusion (Pentesting) & audits de vulnérabilités",
+      "Pare-feu nouvelle génération (NGFW)",
+      "Politiques de sauvegarde immuables & PRA",
+      "Sensibilisation aux attaques de phishing",
+      "Conformité RGPD et protection des données",
+    ],
+    badge: "Sécurité Maximale",
+  },
+  {
+    id: "cloud",
+    icon: "Cloud",
+    title: "Cloud & Hébergement",
+    shortDesc: "Migration cloud, serveurs dédiés et gestion haute disponibilité de vos applications.",
+    fullDesc: "Accélérez votre transition vers le cloud pour bénéficier d'agilité totale et de coûts maîtrisés.",
+    image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&q=80",
+    features: [
+      "Migration vers AWS, Azure et GCP",
+      "Serveurs dédiés et VPS infogérés",
+      "Sauvegardes automatiques redondantes",
+      "Configuration CDN mondial",
+      "SLA de disponibilité 99.9%",
+    ],
+    badge: "Haute Dispo",
+  },
+  {
+    id: "devops",
+    icon: "Rocket",
+    title: "Déploiement d'Applications",
+    shortDesc: "Mise en production sécurisée, pipelines CI/CD et supervision proactive continue.",
+    fullDesc: "Réduisez vos temps de mise sur le marché grâce à des pipelines de déploiement automatisés.",
+    image: "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=800&q=80",
+    features: [
+      "Pipelines CI/CD (GitHub Actions, GitLab CI)",
+      "Conteneurisation Docker & orchestration Kubernetes",
+      "Déploiements sans interruption (Blue-Green)",
+      "Monitoring d'erreurs en temps réel",
+      "Maintenance corrective & préventive",
+    ],
+    badge: "DevOps",
+  },
+  {
+    id: "ia-agents",
+    icon: "Cpu",
+    title: "IA & Agents Autonomes",
+    shortDesc: "Chatbots sur mesure, agents intelligents et automatisation avancée des processus.",
+    fullDesc: "Mettez la puissance des modèles IA de dernière génération au service de votre activité.",
+    image: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&q=80",
+    features: [
+      "Agents IA conversationnels personnalisés",
+      "Automatisation des flux de travail (RPA)",
+      "Traitement intelligent de documents (OCR)",
+      "Intégration d'API LLM (OpenAI, Gemini)",
+      "Analyse prédictive et aide à la décision",
+    ],
+    badge: "Innovation Phare",
+  },
+  {
+    id: "solutions-business",
+    icon: "BarChart3",
+    title: "Solutions Business",
+    shortDesc: "ERP, CRM, gestion commerciale et outils d'optimisation de la productivité.",
+    fullDesc: "Centralisez vos opérations commerciales, stocks, facturation et relations clients.",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+    features: [
+      "Intégration ERP (Odoo, Dolibarr, etc.)",
+      "CRM sur mesure pour le suivi commercial",
+      "Gestion des stocks en temps réel",
+      "Tableaux de bord et reporting analytique",
+      "Passerelles de paiement (Mobile Money, Carte)",
+    ],
+    badge: "Productivité",
+  },
+  {
+    id: "formation",
+    icon: "GraduationCap",
+    title: "Formation & Conseil",
+    shortDesc: "Accompagnement stratégique, audit de vos systèmes et transfert de compétences.",
+    fullDesc: "Montez en compétences et faites les bons choix technologiques grâce à nos consultants.",
+    image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&q=80",
+    features: [
+      "Formations pratiques (Dev, DevOps, Réseau, Sécurité)",
+      "Audit stratégique du système d'information",
+      "Schéma directeur informatique",
+      "Coaching technique des équipes",
+      "Assistance à maîtrise d'ouvrage (AMOA)",
+    ],
+    badge: "Expertise",
+  },
+];
+
+/* ─── PROCESS STEPS ────────────────────────────────────────────────── */
+export const processSteps = [
+  {
+    number: "01",
+    icon: "Lightbulb",
+    title: "Écoute & Analyse",
+    description: "Nous échangeons pour comprendre vos besoins, objectifs commerciaux et contraintes techniques.",
+  },
+  {
+    number: "02",
+    icon: "FileCheck",
+    title: "Proposition sur mesure",
+    description: "Cahier des charges précis, architecture technique claire et devis transparent sans surprise.",
+  },
+  {
+    number: "03",
+    icon: "Code2",
+    title: "Développement & Tests",
+    description: "Nos équipes codent votre solution avec démonstrations régulières et tests d'assurance qualité.",
+  },
+  {
+    number: "04",
+    icon: "Rocket",
+    title: "Livraison & Support",
+    description: "Mise en production sereine, formation de vos équipes et accompagnement continu.",
+  },
+];
+
+/* ─── PORTFOLIO ────────────────────────────────────────────────────── */
+export const portfolioProjects = [
+  {
+    id: 1,
+    title: "AgroLiv",
+    category: "Mobile",
+    tags: ["React Native", "Node.js", "MongoDB"],
+    description: "Plateforme de mise en relation directe entre producteurs locaux et acheteurs agricoles.",
+    impact: "+40% de revenus directs pour les coopératives",
+    image: "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=700&q=80",
+    status: "En production",
+  },
+  {
+    id: 2,
+    title: "FoodRush",
+    category: "Mobile",
+    tags: ["React Native", "Node.js", "MongoDB"],
+    description: "Application de commande et livraison de repas intelligente avec suivi GPS en temps réel.",
+    impact: "+15 000 commandes traitées le premier mois",
+    image: "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=700&q=80",
+    status: "En production",
+  },
+  {
+    id: 3,
+    title: "CHRACERH Portal",
+    category: "Web",
+    tags: ["React", "PostgreSQL", "Docker"],
+    description: "Système intégré de gestion hospitalière et suivi des dossiers patients.",
+    impact: "Réduction de 65% du temps d'attente à l'accueil",
+    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=700&q=80",
+    status: "En production",
+  },
+  {
+    id: 4,
+    title: "Global Softworks Platform",
+    category: "Web",
+    tags: ["React", "Tailwind CSS", "IA & Agents"],
+    description: "Site institutionnel intégrant un assistant IA 24/7 pour la qualification automatique des prospects.",
+    impact: "Taux de conversion de devis multiplié par 3",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80",
+    status: "En production",
+  },
+  {
+    id: 5,
+    title: "Infrastructure Réseau Siège",
+    category: "Réseau & Infra",
+    tags: ["Cisco", "Fibre Optique", "VPN"],
+    description: "Déploiement d'une infrastructure réseau redondée pour 120 collaborateurs et 3 agences.",
+    impact: "99.98% de disponibilité réseau constatée",
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80",
+    status: "Déployé",
+  },
+  {
+    id: 6,
+    title: "SecureGuard Audit",
+    category: "Cybersécurité",
+    tags: ["Pentest", "Pare-feu NGFW", "Zero-Trust"],
+    description: "Audit d'intrusion complet et architecture zéro-trust pour une institution financière.",
+    impact: "18 vulnérabilités critiques corrigées",
+    image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=700&q=80",
+    status: "Certifié",
+  },
+  {
+    id: 7,
+    title: "Agent IA Support Client",
+    category: "IA & Agents",
+    tags: ["OpenAI API", "Python", "FastAPI"],
+    description: "Assistant virtuel autonome résolvant 70% des tickets de support niveau 1 sans intervention humaine.",
+    impact: "Réponse instantanée < 3 secondes, 24h/24",
+    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=700&q=80",
+    status: "Actif",
+  },
+];
+
+/* ─── TEAM ─────────────────────────────────────────────────────────── */
+export const teamMembers = [
+  {
+    name: "Moussa Kamdem",
+    role: "CEO & Architecte Solutions",
+    desc: "10 ans d'expérience en architecture systèmes distribués et transformation digitale.",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
+    linkedin: "#",
+  },
+  {
+    name: "Diane Ngo Biyeck",
+    role: "Directrice Technique (CTO)",
+    desc: "Experte en développement full-stack, DevOps et architectures cloud AWS & Azure.",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80",
+    linkedin: "#",
+  },
+  {
+    name: "Rodrigue Fotso",
+    role: "Expert Cybersécurité",
+    desc: "Certifié CISSP et CEH, spécialiste en tests d'intrusion et audit de vulnérabilités.",
+    image: "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?w=400&q=80",
+    linkedin: "#",
+  },
+  {
+    name: "Fatime Bello",
+    role: "Lead Développeuse Mobile",
+    desc: "Développeuse React Native & Flutter, créatrice d'expériences mobiles fluides.",
+    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80",
+    linkedin: "#",
+  },
+  {
+    name: "Patrick Nguele",
+    role: "Ingénieur Réseaux & Infra",
+    desc: "Certifié Cisco CCNP, expert en déploiement d'infrastructures réseau complexes.",
+    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&q=80",
+    linkedin: "#",
+  },
+  {
+    name: "Sophie Awono",
+    role: "Consultante IA & Data",
+    desc: "Spécialiste NLP, LLM et agents autonomes appliqués aux processus d'entreprise.",
+    image: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=400&q=80",
+    linkedin: "#",
+  },
+];
+
+/* ─── BLOG ARTICLES ────────────────────────────────────────────────── */
+export const blogPosts = [
+  {
+    id: 1,
+    title: "Comment l'IA transforme le service client en Afrique",
+    excerpt: "Les agents IA autonomes permettent désormais aux PME africaines d'offrir un support 24/7 sans coût prohibitif.",
+    category: "IA & Innovation",
+    date: "10 Octobre 2026",
+    author: "Sophie Awono",
+    readTime: "5 min",
+    image: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=700&q=80",
+  },
+  {
+    id: 2,
+    title: "Cybersécurité 2026 : Les 5 menaces critiques à surveiller",
+    excerpt: "Ransomwares évolués, deepfakes professionnels, attaques sur la supply chain... ce que votre DSI doit savoir.",
+    category: "Cybersécurité",
+    date: "3 Octobre 2026",
+    author: "Rodrigue Fotso",
+    readTime: "7 min",
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=700&q=80",
+  },
+  {
+    id: 3,
+    title: "React Native vs Flutter : Quel choix pour votre app mobile ?",
+    excerpt: "Comparaison objective des deux frameworks leaders du développement mobile cross-platform en 2026.",
+    category: "Développement",
+    date: "25 Septembre 2026",
+    author: "Fatime Bello",
+    readTime: "6 min",
+    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=700&q=80",
+  },
+];
+
+/* ─── AI BOT KNOWLEDGE BASE ────────────────────────────────────────── */
+export const aiBotKnowledge = [
+  {
+    keywords: ["prix", "tarif", "coût", "combien", "budget"],
+    response: "Nos tarifs dépendent de la complexité du projet. Pour une application web, comptez à partir de 500 000 FCFA. Pour un devis précis et gratuit, cliquez sur 'Demander un devis' en haut de la page !",
+  },
+  {
+    keywords: ["devis", "estimation", "commencer", "contact"],
+    response: "Pour un devis gratuit, cliquez sur le bouton jaune 'Demander un devis' en haut à droite, ou appelez-nous au +237 696 459 762. Réponse garantie sous 24h !",
+  },
+  {
+    keywords: ["mobile", "application", "android", "ios"],
+    response: "Oui ! Nous développons des applications mobiles React Native et Flutter pour Android et iOS, comme FoodRush et AgroLiv dans notre portfolio.",
+  },
+  {
+    keywords: ["sécurité", "cybersécurité", "piratage", "audit", "protection"],
+    response: "Notre pôle Cybersécurité réalise des tests d'intrusion, pare-feu nouvelle génération et protection anti-ransomware. Nos ingénieurs sont certifiés CISSP et CEH.",
+  },
+  {
+    keywords: ["ia", "intelligence artificielle", "agent", "chatbot", "automatisation"],
+    response: "Nous intégrons des agents IA autonomes connectés à vos données d'entreprise : support client, automatisation, génération de documents et analyse prédictive.",
+  },
+  {
+    keywords: ["cameroun", "yaoundé", "afrique", "localisation"],
+    response: "Nous sommes basés à Yaoundé, Cameroun, et accompagnons des clients partout en Afrique et à l'international grâce à nos méthodes de travail agiles.",
+  },
+  {
+    keywords: ["délai", "durée", "combien de temps", "rapide"],
+    response: "Un site vitrine : 1 à 2 semaines. Une application complète : 4 à 8 semaines. Un audit cybersécurité : 1 à 3 semaines selon le périmètre.",
+  },
+];
