@@ -60,7 +60,7 @@ export default function AboutPage({ onOpenQuote }) {
             <div className="absolute top-4 left-4 bg-slate-950/80 backdrop-blur-md p-2 rounded-2xl border border-white/20 shadow-xl flex items-center gap-3">
               <img src="/logo.png" alt="Logo GSI" className="w-12 h-12 object-contain rounded-xl" />
               <div className="pr-3 text-white">
-                <div className="text-xs font-black">GLOBAL SOFTWARE</div>
+                <div className="text-xs font-black">GLOBAL SOFTWORKS</div>
                 <div className="text-[10px] text-[#FBBF24] font-bold">INNOVATION</div>
               </div>
             </div>
@@ -75,7 +75,7 @@ export default function AboutPage({ onOpenQuote }) {
               Nés de la passion,<br/><span className="text-[#1565C0]">façonnés par l'expérience</span>
             </h2>
             <p className="text-slate-600 leading-relaxed mb-4">
-              Fondée à Yaoundé, Cameroun, Global Software Innovation est née de la volonté de combler le fossé entre les entreprises africaines et les technologies de pointe mondiales.
+              Fondée à Yaoundé, Cameroun, Global Softworks Innovation est née de la volonté de combler le fossé entre les entreprises africaines et les technologies de pointe mondiales.
             </p>
             <p className="text-slate-600 leading-relaxed mb-6">
               Depuis notre création, nous avons accompagné plus de 50 organisations — PME, institutions publiques, startups — dans leur transformation digitale avec des solutions robustes, sécurisées et adaptées au contexte local et international.

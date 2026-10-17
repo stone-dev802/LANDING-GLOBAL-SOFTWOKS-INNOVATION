@@ -16,11 +16,11 @@ export default function Footer({ onOpenQuote }) {
             <div className="flex items-center gap-3 mb-4">
               <img 
                 src="/logo.png" 
-                alt="Global Software Innovation Logo" 
+                alt="Global Softworks Innovation Logo" 
                 className="w-12 h-12 rounded-xl object-contain bg-slate-950 p-1 border border-slate-700 shadow-md"
               />
               <div>
-                <div className="font-black text-sm text-white tracking-tight">GLOBAL SOFTWARE</div>
+                <div className="font-black text-sm text-white tracking-tight">GLOBAL SOFTWORKS</div>
                 <div className="font-bold text-[11px] text-sky-400 tracking-widest uppercase">INNOVATION</div>
                 <div className="text-[10px] text-slate-400">Innover • Développer • Sécuriser • Ensemble</div>
               </div>

@@ -83,7 +83,7 @@ export default function HomePage({ onOpenQuote }) {
 
               {/* Description */}
               <p className="text-[12.5px] sm:text-[13px] text-slate-300 leading-relaxed mb-7 max-w-[480px]">
-                Global Software Innovation est une équipe de passionnés en technologie, spécialisée dans le développement logiciel, les réseaux, la cybersécurité et le déploiement d'applications. Nous aidons les entreprises et les organisations à innover, se protéger et performer dans le digital.
+                Global Softworks Innovation est une équipe de passionnés en technologie, spécialisée dans le développement logiciel, les réseaux, la cybersécurité et le déploiement d'applications. Nous aidons les entreprises et les organisations à innover, se protéger et performer dans le digital.
               </p>
 
               {/* CTA Buttons */}
@@ -139,7 +139,7 @@ export default function HomePage({ onOpenQuote }) {
                       className="w-16 h-16 rounded-xl object-contain bg-slate-950 p-1.5 border border-sky-400/30 shadow shrink-0"
                     />
                     <div>
-                      <div className="text-[15px] font-black text-white tracking-wide uppercase">GLOBAL SOFTWARE</div>
+                      <div className="text-[15px] font-black text-white tracking-wide uppercase">GLOBAL SOFTWORKS</div>
                       <div className="text-[13px] font-black text-[#FBBF24] tracking-widest uppercase mt-1">INNOVATION</div>
                       <div className="text-[11px] text-slate-400 mt-1">Innover • Développer • Sécuriser • Ensemble</div>
                     </div>

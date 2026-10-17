@@ -367,7 +367,7 @@ export default function QuoteModal({ isOpen, onClose, preselectedService }) {
                   />
                   <div>
                     <div className="font-black text-xs tracking-tight text-white uppercase leading-none">
-                      GLOBAL SOFTWARES
+                      GLOBAL SOFTWORKSS
                     </div>
                     <div className="font-extrabold text-[9.5px] tracking-widest text-sky-400 uppercase leading-tight">
                       INNOVATION

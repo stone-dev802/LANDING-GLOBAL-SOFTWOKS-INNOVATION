@@ -34,11 +34,11 @@ export default function Navbar({ onOpenQuote }) {
         <Link to="home" className="flex items-center gap-3 shrink-0 group">
           <img 
             src="/logo.png" 
-            alt="Global Software Innovation Logo" 
+            alt="Global Softworks Innovation Logo" 
             className="w-12 h-12 rounded-xl object-contain bg-slate-950 p-1 shadow-md group-hover:scale-105 transition-transform"
           />
           <div className="leading-tight">
-            <div className="font-black text-[13.5px] tracking-tight text-[#0B2A6B]">GLOBAL SOFTWARE</div>
+            <div className="font-black text-[13.5px] tracking-tight text-[#0B2A6B]">GLOBAL SOFTWORKS</div>
             <div className="font-bold text-[11px] tracking-widest text-[#1565C0] uppercase">INNOVATION</div>
             <div className="text-[9.5px] text-slate-400 tracking-wide hidden sm:block">Innover • Développer • Sécuriser • Ensemble</div>
           </div>
