@@ -5,7 +5,7 @@ export const companyInfo = {
   tagline: "Des solutions numériques sur mesure pour un avenir plus connecté",
   description:
     "Global Softworks Innovation est une équipe de passionnés en technologie, spécialisée dans le développement logiciel, les réseaux, la cybersécurité et le déploiement d'applications. Nous aidons les entreprises et les organisations à innover, se protéger et performer dans le digital.",
-  phone: "+237 696 459 762",
+  phone: "+237 670 092 318",
   email: "contact@globalsoftworks-innovation.com",
   address: "Yaoundé, Cameroun",
   hours: "Lun - Ven : 8h - 18h",
@@ -433,7 +433,7 @@ export const aiBotKnowledge = [
   },
   {
     keywords: ["devis", "estimation", "commencer", "contact"],
-    response: "Pour un devis gratuit, cliquez sur le bouton jaune 'Demander un devis' en haut à droite, ou appelez-nous au +237 696 459 762. Réponse garantie sous 24h !",
+    response: "Pour un devis gratuit, cliquez sur le bouton jaune 'Demander un devis' en haut à droite, ou appelez-nous au +237 670 092 318. Réponse garantie sous 24h !",
   },
   {
     keywords: ["mobile", "application", "android", "ios"],
