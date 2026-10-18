@@ -293,8 +293,8 @@ export const teamMembers = [
     fullBio: "Connu sous le pseudonyme DR_STONE, Ndzana Adji Svenilystone Ashton Thomas est un développeur fullstack passionné et rigoureux. Il conçoit des solutions logicielles complètes et modernes en alliant design d'expérience utilisateur (UI/UX soigné), développement robuste (React, Node.js, PHP/Symfony) et portabilité mobile.",
     image: "/team/dr_stone.png",
     linkedin: "https://github.com/stone-dev802",
-    /*github: "https://github.com/stone-dev802",
-     email: "ndzanathomas119@gmail.com", */
+    github: "https://github.com/stone-dev802",
+    email: "ndzanathomas119@gmail.com", 
     badge: "Softworks Engineer and Core Developer",
   },
   {
@@ -328,8 +328,8 @@ export const teamMembers = [
     fullBio: "Connu sous le pseudonyme Kelvyn_Telecom, Diffo Ngassop Kevin Dibril est un ingénieur en travaux informatiques option Réseau, Système et Cybersécurité. Polyvalent entre la posture offensive (Ethical Hacking, pentesting) et défensive (SOC Analyst, administration sécurisée), il déploie des architectures réseau haute disponibilité et protège les systèmes contre les intrusions critiques.",
     image: "/team/kelvyn_telecom.png",
     linkedin: "https://www.linkedin.com/in/kelvyndiffo",
-    /*github: "https://github.com/kelvyndiffo8-design",
-    email: "kelvyndiffo8@gmail.com",*/
+    github: "https://github.com/kelvyndiffo8-design",
+    email: "kelvyndiffo8@gmail.com",
     badge: "Security Lead",
   },
   {
@@ -364,8 +364,8 @@ export const teamMembers = [
     fullBio: "Connu sous le pseudonyme Terminator, Koh Djoufo Valentin est un ingénieur en travaux informatiques option Génie Logiciel. Développeur fullstack accompli partageant une expertise pointue de bout en bout, il conçoit des architectures logicielles complètes, scalables et intuitives : du prototypage UI/UX soigné jusqu'au développement robuste avec PHP/Symfony, React, React Native et Node.js.",
     image: "/team/terminator.png",
     linkedin: "https://www.linkedin.com/in/valentindjoufo",
-    /*github: "https://github.com/valentindjoufo",
-    email: "valentindjoufo@gmail.com",*/
+    github: "https://github.com/valentindjoufo",
+    email: "valentindjoufo@gmail.com",
     badge: "Softworks Engineer",
   },
   {
