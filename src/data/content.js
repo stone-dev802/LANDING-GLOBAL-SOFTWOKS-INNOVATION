@@ -132,7 +132,7 @@ export const servicesData = [
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
     features: [
       "Intégration ERP (Odoo, Dolibarr) & CRM sur mesure pour le suivi commercial",
-      "Portails métier sectoriels — ex : santé (CHRACERH), agriculture (AgroLiv), restauration (FoodRush)",
+      "Portails métier sectoriels — ex : santé, agriculture (AgroLiv), restauration (FoodRush)",
       "Gestion des stocks, facturation & reporting en temps réel",
       "Tableaux de bord analytiques & aide à la décision",
       "Passerelles de paiement (Mobile Money, Orange Money, Carte bancaire)",
