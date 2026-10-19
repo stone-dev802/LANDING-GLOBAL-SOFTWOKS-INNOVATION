@@ -464,20 +464,6 @@ export const teamMembers = [
     email: "contact@globalsoftworks-innovation.com",
     badge: "Network Engineer",
   },
-  {
-    name: "Patrick Nguele",
-    role: "Ingénieur Réseaux & Infra",
-    desc: "Certifié Cisco CCNP, expert en déploiement d'infrastructures réseau complexes.",
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&q=80",
-    linkedin: "#",
-  },
-  {
-    name: "Sophie Awono",
-    role: "Consultante IA & Data",
-    desc: "Spécialiste NLP, LLM et agents autonomes appliqués aux processus d'entreprise.",
-    image: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=400&q=80",
-    linkedin: "#",
-  },
 ];
 
 /* ─── BLOG ARTICLES ────────────────────────────────────────────────── */
