@@ -464,6 +464,41 @@ export const teamMembers = [
     email: "contact@globalsoftworks-innovation.com",
     badge: "Network Engineer",
   },
+  
+  {
+    id: "alexias",
+    name: "OMBALA FERNANDE ALEXIAS",
+    alias: "Alexias",
+    role: "Ingénieur Réseaux, Systèmes & Cybersécurité",
+    subtitle: "Administration Réseaux • Sécurité IT • Vidéosurveillance & CCTV",
+    category: "Réseaux & Systèmes",
+    specialties: [
+      "Administration Réseaux & Systèmes",
+      "Sécurité Informatique & Défense en Profondeur",
+      "Mise en Place d'Infrastructures Réseaux",
+      "Installation de Systèmes de Vidéosurveillance (CCTV & IP)",
+      "Installation & Maintenance des Systèmes Informatiques",
+    ],
+    skills: [
+      "Câblage & Architecture Réseau",
+      "Administration Systèmes (Windows & Linux)",
+      "Sécurité des Réseaux & Systèmes",
+      "Installation Caméras IP & CCTV",
+      "Vidéosurveillance & Contrôle d'Accès",
+      "Configuration Équipements Réseau (Cisco, Mikrotik)",
+      "VPN & Sécurisation des Accès Distants",
+      "Maintenance Préventive & Curative",
+    ],
+    experience: "Ingénierie Réseaux & Sécurité",
+    projectsCount: "Infrastructures Déployées",
+    desc: "Ingénieure en travaux informatiques spécialisée en réseaux, systèmes et sécurité. Experte en administration d'infrastructures, sécurisation des environnements et déploiement de systèmes de vidéosurveillance professionnels.",
+    fullBio: "Connue sous le prénom Paola, Bassek Brenda Paola est ingénieure en travaux informatiques option Réseau, Système & Sécurité. Rigoureuse et polyvalente, elle assure l'administration et la sécurisation d'infrastructures réseau complexes, la mise en place d'équipements actifs et passifs (switches, routeurs, firewalls), ainsi que l'installation complète de systèmes de vidéosurveillance IP et CCTV pour les entreprises et organisations. Ses compétences s'étendent de la configuration d'équipements Cisco et Mikrotik à la mise en œuvre de solutions VPN et de contrôle d'accès, en passant par la maintenance préventive et curative des parcs informatiques.",
+    image: "/team/1.png",
+    linkedin: "#",
+    github: "#",
+    email: "contact@globalsoftworks-innovation.com",
+    badge: "Network Engineer",
+  },
 ];
 
 /* ─── BLOG ARTICLES ────────────────────────────────────────────────── */
