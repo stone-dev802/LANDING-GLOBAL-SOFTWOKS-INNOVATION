@@ -424,7 +424,7 @@ export const teamMembers = [
     projectsCount: "Solutions Sur Mesure",
     desc: "Ingénieur en travaux informatique option Génie Logiciel. Développeur fullstack polyvalent spécialisé dans la conception de plateformes web, applications mobiles et architectures PHP/Symfony & Node.js.",
     fullBio: "Connu sous le pseudonyme Terminator, Koh Djoufo Valentin est un ingénieur en travaux informatiques option Génie Logiciel. Développeur fullstack accompli partageant une expertise pointue de bout en bout, il conçoit des architectures logicielles complètes, scalables et intuitives : du prototypage UI/UX soigné jusqu'au développement robuste avec PHP/Symfony, React, React Native et Node.js.",
-    image: "/team/terminator.png",
+    image: "/team/terminator_1.png",
     linkedin: "https://www.linkedin.com/in/valentindjoufo",
     github: "https://github.com/valentindjoufo",
     email: "valentindjoufo@gmail.com",
