@@ -544,4 +544,12 @@ export const aiBotKnowledge = [
     keywords: ["délai", "durée", "combien de temps", "rapide"],
     response: "Un site vitrine : 1 à 2 semaines. Une application complète : 4 à 8 semaines. Un audit cybersécurité : 1 à 3 semaines selon le périmètre.",
   },
+  {
+    keywords: ["camera", "caméra", "vidéosurveillance", "videosurveillance", "cctv", "surveillance"],
+    response: "Nous installons des systèmes complets de vidéosurveillance (caméras IP/HD, vision nocturne, enregistreurs NVR/DVR) avec visionnage en direct sur votre smartphone (iOS/Android) et contrôle d'accès sécurisé.",
+  },
+  {
+    keywords: ["câblage", "cablage", "installation réseau", "installation reseau", "baie de brassage", "fibre", "wifi"],
+    response: "Nous réalisons l'installation complète de votre réseau d'entreprise : câblage structuré cat 6/6A/7, baies de brassage, fibre optique, routeurs & switchs Cisco / MikroTik, et Wi-Fi professionnel haute couverture.",
+  },
 ];

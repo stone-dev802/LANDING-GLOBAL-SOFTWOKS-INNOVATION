@@ -21,7 +21,9 @@ import {
   FileText, 
   Shield, 
   Zap, 
-  Users 
+  Users,
+  Camera,
+  Wrench
 } from 'lucide-react';
 
 export default function QuoteModal({ isOpen, onClose, preselectedService }) {
@@ -42,12 +44,14 @@ export default function QuoteModal({ isOpen, onClose, preselectedService }) {
 
   const servicesList = [
     { id: 'dev', title: 'Développement Logiciel', icon: Code2 },
-    { id: 'reseau', title: 'Réseaux & Infrastructure', icon: Network },
+    { id: 'reseau', title: 'Installation Réseau & Infrastructure', icon: Network },
+    { id: 'videosurveillance', title: 'Installation Caméras & Vidéosurveillance', icon: Camera },
     { id: 'cyber', title: 'Cybersécurité', icon: ShieldCheck },
     { id: 'cloud', title: 'Cloud & Hébergement', icon: Cloud },
     { id: 'devops', title: "Déploiement d'Applications", icon: Rocket },
     { id: 'ia', title: 'IA & Agents Autonomes', icon: Cpu },
     { id: 'business', title: 'Solutions Business', icon: BarChart3 },
+    { id: 'maintenance', title: 'Maintenance & Support IT', icon: Wrench },
     { id: 'formation', title: 'Formation & Conseil', icon: GraduationCap },
   ];
 

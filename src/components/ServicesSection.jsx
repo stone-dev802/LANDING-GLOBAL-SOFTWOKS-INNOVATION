@@ -9,20 +9,26 @@ import {
   BarChart3, 
   GraduationCap, 
   ArrowRight,
-  Sparkles
+  Sparkles,
+  Camera,
+  Wrench
 } from 'lucide-react';
 import { servicesData } from '../data/content';
 
 // Map icon strings to Lucide components
 const iconMap = {
   CodeXml: Code2,
+  Code2: Code2,
   Network: Network,
   ShieldAlert: ShieldCheck,
+  ShieldCheck: ShieldCheck,
   Cloud: Cloud,
   Rocket: Rocket,
   Cpu: Cpu,
   BarChart3: BarChart3,
   GraduationCap: GraduationCap,
+  Camera: Camera,
+  Wrench: Wrench,
 };
 
 export default function ServicesSection({ onSelectService, onOpenQuote }) {
