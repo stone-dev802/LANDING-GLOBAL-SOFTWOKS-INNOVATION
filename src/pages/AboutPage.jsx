@@ -65,8 +65,8 @@ export default function AboutPage({ onOpenQuote }) {
               </div>
             </div>
             <div className="absolute -bottom-6 -right-6 bg-[#FBBF24] rounded-2xl p-5 text-slate-950 shadow-xl">
-              <div className="text-3xl font-black">7+</div>
-              <div className="text-xs font-bold">Années d'expertise</div>
+              <div className="text-3xl font-black">2023</div>
+              <div className="text-xs font-bold">Créée en 2023</div>
             </div>
           </div>
           <div>
@@ -75,17 +75,17 @@ export default function AboutPage({ onOpenQuote }) {
               Nés de la passion,<br/><span className="text-[#1565C0]">façonnés par l'expérience</span>
             </h2>
             <p className="text-slate-600 leading-relaxed mb-4">
-              Fondée à Yaoundé, Cameroun, Global Softworks Innovation est née de la volonté de combler le fossé entre les entreprises africaines et les technologies de pointe mondiales.
+              Fondée en 2023 à Yaoundé, Cameroun, Global Softworks Innovation est née de la volonté de combler le fossé entre les entreprises africaines et les technologies de pointe mondiales.
             </p>
             <p className="text-slate-600 leading-relaxed mb-6">
-              Depuis notre création, nous avons accompagné plus de 50 organisations — PME, institutions publiques, startups — dans leur transformation digitale avec des solutions robustes, sécurisées et adaptées au contexte local et international.
+              Depuis notre création, nous accompagnons les organisations — PME, institutions publiques, startups — dans leur transformation digitale avec des solutions robustes, sécurisées et adaptées au contexte local et international.
             </p>
             <ul className="space-y-3">
               {[
                 "Développement de solutions pour 12+ secteurs d'activité",
-                "Équipe de 20+ ingénieurs et experts certifiés",
-                "Présence dans 5 pays africains",
-                "Partenaire officiel de solutions cloud enterprise",
+                "Équipe d'ingénieurs et experts certifiés",
+                "Présence et accompagnement multi-pays",
+                "Partenaire de solutions cloud & IA enterprise",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-2.5 text-sm text-slate-700">
                   <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5"/>
