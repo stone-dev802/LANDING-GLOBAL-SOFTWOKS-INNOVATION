@@ -3,6 +3,7 @@ import { RouterProvider, useRouter } from './router';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import QuoteModal from './components/QuoteModal';
+import WhatsAppFloatingButton from './components/WhatsAppFloatingButton';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
@@ -44,6 +45,7 @@ function AppContent() {
       <Navbar onOpenQuote={() => openQuote()}/>
       <main className="flex-grow">{renderPage()}</main>
       <Footer onOpenQuote={() => openQuote()}/>
+      <WhatsAppFloatingButton />
       <QuoteModal isOpen={quoteOpen} onClose={closeQuote} preselectedService={preselected}/>
     </div>
   );

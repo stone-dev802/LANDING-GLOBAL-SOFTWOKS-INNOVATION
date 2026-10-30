@@ -5,8 +5,10 @@ export const companyInfo = {
   tagline: "Des solutions numériques sur mesure pour un avenir plus connecté",
   description:
     "Global Softworks Innovation est une équipe de passionnés en technologie, spécialisée dans le développement logiciel, les réseaux, la cybersécurité et le déploiement d'applications. Nous aidons les entreprises et les organisations à innover, se protéger et performer dans le digital.",
-  phone: "+237 670 092 318 / +237 691 862 447",
-  email: "contact@globalsoftworks-innovation.com",
+  phone: "+237 691 862 447 / +237 670 092 318",
+  whatsapp: "237691862447",
+  email: "thomyashton@gmail.com",
+  displayEmail: "contact@globalsoftworks-innovation.com",
   address: "Yaoundé, Cameroun",
   hours: "Lun - Ven : 8h - 18h",
   stats: [

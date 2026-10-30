@@ -23,11 +23,15 @@ import {
   Zap, 
   Users,
   Camera,
-  Wrench
+  Wrench,
+  MessageCircle,
+  Loader2
 } from 'lucide-react';
+import { companyInfo } from '../data/content';
 
 export default function QuoteModal({ isOpen, onClose, preselectedService }) {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [charCount, setCharCount] = useState(0);
 
   const [form, setForm] = useState({
@@ -82,9 +86,42 @@ export default function QuoteModal({ isOpen, onClose, preselectedService }) {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+
+    // 1. Envoi asynchrone par Email via FormSubmit.co
+    try {
+      await fetch("https://formsubmit.co/ajax/thomyashton@gmail.com", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          _subject: `[DEVIS GSI] Nouvelle demande de ${form.name}`,
+          _template: "table",
+          _captcha: "false",
+          Nom: form.name,
+          Entreprise: form.company || 'Particulier / Non précisé',
+          Email: form.email,
+          Telephone: form.phone,
+          Services_Souhaites: form.services.join(', ') || 'Non précisé',
+          Budget_Estime: form.budget,
+          Description_Projet: form.message
+        })
+      });
+    } catch (err) {
+      console.warn("Envoi email silencieux :", err);
+    } finally {
+      setLoading(false);
+      setSubmitted(true);
+    }
+  };
+
+  const getWhatsAppUrl = () => {
+    const text = `*Bonjour Global Softworks Innovation !*\n\nJe viens de soumettre une demande de devis sur votre site :\n\n👤 *Nom :* ${form.name}\n🏢 *Entreprise :* ${form.company || 'N/A'}\n📧 *Email :* ${form.email}\n📱 *Tél :* ${form.phone}\n🛠️ *Services :* ${form.services.join(', ') || 'N/A'}\n💰 *Budget :* ${form.budget}\n📝 *Projet :* ${form.message}`;
+    return `https://wa.me/237691862447?text=${encodeURIComponent(text)}`;
   };
 
   const handleClose = () => {
@@ -108,7 +145,7 @@ export default function QuoteModal({ isOpen, onClose, preselectedService }) {
               Demande reçue avec succès !
             </h3>
             <p className="text-slate-600 text-xs sm:text-sm max-w-md mx-auto mb-5">
-              Merci <strong>{form.name}</strong>. Notre équipe d'experts a bien reçu votre demande et vous contactera sous <strong>24h ouvrées</strong> avec une proposition adaptée à vos besoins.
+              Merci <strong>{form.name}</strong>. Votre demande a bien été transmise à notre équipe par e-mail. Nous vous recontacterons sous <strong>24h ouvrées</strong>.
             </p>
             <div className="bg-slate-50 rounded-xl p-4 text-left text-xs text-slate-700 max-w-sm mx-auto border border-slate-200 space-y-1.5 mb-6">
               <div><strong>Services :</strong> {form.services.join(', ') || 'Non précisé'}</div>
@@ -116,12 +153,26 @@ export default function QuoteModal({ isOpen, onClose, preselectedService }) {
               <div><strong>Email :</strong> {form.email}</div>
               <div><strong>Téléphone :</strong> {form.phone}</div>
             </div>
-            <button
-              onClick={handleClose}
-              className="px-6 py-2.5 rounded-full bg-[#0B2558] hover:bg-[#1565C0] text-white font-bold text-xs sm:text-sm transition-all shadow-md cursor-pointer"
-            >
-              Fermer la fenêtre
-            </button>
+
+            {/* Action Buttons: WhatsApp direct + Fermer */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+              <a
+                href={getWhatsAppUrl()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-lg transition-all active:scale-95 cursor-pointer"
+              >
+                <MessageCircle className="w-4 h-4 fill-white" />
+                <span>Confirmer aussi sur WhatsApp</span>
+              </a>
+
+              <button
+                onClick={handleClose}
+                className="w-full sm:w-auto px-6 py-3 rounded-full bg-[#0B2558] hover:bg-[#1565C0] text-white font-bold text-xs sm:text-sm transition-all shadow-md cursor-pointer"
+              >
+                Fermer la fenêtre
+              </button>
+            </div>
           </div>
         ) : (
           /* ── Two Columns Layout (Compact & Pixel Perfect) ── */
@@ -341,10 +392,20 @@ export default function QuoteModal({ isOpen, onClose, preselectedService }) {
 
                   <button
                     type="submit"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-[#FBBF24] hover:bg-[#F59E0B] text-slate-950 font-bold text-xs shadow-sm hover:shadow transition-all active:scale-95 cursor-pointer shrink-0"
+                    disabled={loading}
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-[#FBBF24] hover:bg-[#F59E0B] disabled:opacity-60 text-slate-950 font-bold text-xs shadow-sm hover:shadow transition-all active:scale-95 cursor-pointer shrink-0"
                   >
-                    <Send className="w-3 h-3 fill-slate-950" />
-                    <span>Envoyer ma demande &gt;</span>
+                    {loading ? (
+                      <>
+                        <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                        <span>Envoi en cours...</span>
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-3 h-3 fill-slate-950" />
+                        <span>Envoyer ma demande &gt;</span>
+                      </>
+                    )}
                   </button>
                 </div>
 

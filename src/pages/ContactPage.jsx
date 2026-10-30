@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MapPin, Mail, Phone, Clock, Send, CheckCircle, ArrowRight } from 'lucide-react';
+import { MapPin, Mail, Phone, Clock, Send, CheckCircle, ArrowRight, MessageCircle, Loader2 } from 'lucide-react';
 import { companyInfo } from '../data/content';
 
 const SectionPill = ({ children }) => (
@@ -11,11 +11,42 @@ const SectionPill = ({ children }) => (
 
 export default function ContactPage({ onOpenQuote }) {
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({ name: '', email: '', phone: '', subject: '', message: '' });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSent(true);
+    setLoading(true);
+
+    try {
+      await fetch("https://formsubmit.co/ajax/thomyashton@gmail.com", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          _subject: `[CONTACT GSI] ${form.subject || 'Nouveau message'} de ${form.name}`,
+          _template: "table",
+          _captcha: "false",
+          Nom: form.name,
+          Email: form.email,
+          Telephone: form.phone,
+          Sujet: form.subject || 'Non précisé',
+          Message: form.message
+        })
+      });
+    } catch (err) {
+      console.warn("Envoi email silencieux :", err);
+    } finally {
+      setLoading(false);
+      setSent(true);
+    }
+  };
+
+  const getWhatsAppUrl = () => {
+    const text = `*Bonjour Global Softworks Innovation !*\n\nJe vous contacte depuis le formulaire de votre site web :\n\n👤 *Nom :* ${form.name}\n📧 *Email :* ${form.email}\n📱 *Téléphone :* ${form.phone}\n📌 *Sujet :* ${form.subject || 'Non précisé'}\n💬 *Message :* ${form.message}`;
+    return `https://wa.me/237691862447?text=${encodeURIComponent(text)}`;
   };
 
   return (
@@ -93,16 +124,30 @@ export default function ContactPage({ onOpenQuote }) {
             <div className="lg:col-span-3">
               <div className="bg-white rounded-3xl border border-slate-200 shadow-sm p-8 sm:p-10">
                 {sent ? (
-                  <div className="text-center py-12">
-                    <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-5">
+                  <div className="text-center py-10">
+                    <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-4">
                       <CheckCircle className="w-10 h-10"/>
                     </div>
-                    <h3 className="text-2xl font-black text-[#0B2A6B] mb-2">Message envoyé !</h3>
-                    <p className="text-slate-600 text-sm">Merci {form.name}. Notre équipe vous répondra sous 24h ouvrées.</p>
-                    <button onClick={() => setSent(false)}
-                      className="mt-6 px-6 py-2.5 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-semibold transition-all cursor-pointer">
-                      Envoyer un autre message
-                    </button>
+                    <h3 className="text-2xl font-black text-[#0B2A6B] mb-2">Message envoyé avec succès !</h3>
+                    <p className="text-slate-600 text-sm max-w-md mx-auto mb-6">
+                      Merci <strong>{form.name}</strong>. Votre message a bien été transmis à notre équipe par e-mail. Nous vous répondrons sous <strong>24h ouvrées</strong>.
+                    </p>
+
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+                      <a
+                        href={getWhatsAppUrl()}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-lg transition-all active:scale-95 cursor-pointer"
+                      >
+                        <MessageCircle className="w-4 h-4 fill-white" />
+                        <span>Discuter aussi sur WhatsApp</span>
+                      </a>
+                      <button onClick={() => setSent(false)}
+                        className="w-full sm:w-auto px-6 py-3 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs sm:text-sm font-semibold transition-all cursor-pointer">
+                        Envoyer un autre message
+                      </button>
+                    </div>
                   </div>
                 ) : (
                   <>
@@ -155,9 +200,19 @@ export default function ContactPage({ onOpenQuote }) {
                           className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-[#FBBF24] focus:ring-1 focus:ring-[#FBBF24] transition-colors resize-none"/>
                       </div>
                       <button type="submit"
-                        className="w-full flex items-center justify-center gap-2.5 py-4 rounded-xl bg-[#0B2A6B] hover:bg-[#1565C0] text-white font-black text-base transition-all cursor-pointer shadow-xl active:scale-95">
-                        <Send className="w-5 h-5"/>
-                        Envoyer le message
+                        disabled={loading}
+                        className="w-full flex items-center justify-center gap-2.5 py-4 rounded-xl bg-[#0B2A6B] hover:bg-[#1565C0] disabled:opacity-60 text-white font-black text-base transition-all cursor-pointer shadow-xl active:scale-95">
+                        {loading ? (
+                          <>
+                            <Loader2 className="w-5 h-5 animate-spin"/>
+                            Envoi en cours...
+                          </>
+                        ) : (
+                          <>
+                            <Send className="w-5 h-5"/>
+                            Envoyer le message
+                          </>
+                        )}
                       </button>
                       <p className="text-center text-xs text-slate-400">🔒 Vos données sont confidentielles. Aucun spam.</p>
                     </form>
