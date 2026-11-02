@@ -230,6 +230,21 @@ export const portfolioProjects = [
     impact: "Traçabilité & gouvernance critique pour Afriland First Bank",
     image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&q=80",
     status: "En production",
+    client: "Afriland First Bank",
+    year: "2024",
+    role: "Architecture logicielle, Pipeline de données & Sécurité",
+    challenge: "Traitement et audit de volumes massifs d'opérations bancaires hétérogènes nécessitant une conformité réglementaire absolue et un temps de traçabilité quasi instantané.",
+    solution: "Mise en place d'une cartographie dynamique des flux de données avec métadonnées enrichies, tableaux de bord de lignage et contrôles automatisés de l'intégrité.",
+    results: [
+      "Visibilité totale sur le cycle de vie de chaque transaction",
+      "Auditabilité bancaire immédiate conforme aux normes",
+      "Réduction majeure du temps de diagnostic des anomalies financières"
+    ],
+    gallery: [
+      "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1000&q=80",
+      "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1000&q=80",
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1000&q=80"
+    ]
   },
   {
     id: 2,
@@ -240,6 +255,21 @@ export const portfolioProjects = [
     impact: "Disponible sur Google Play Store & monétisation active",
     image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80",
     status: "Sur Play Store",
+    client: "Turner EdTech",
+    year: "2023 - 2024",
+    role: "Développement Mobile Fullstack & Intégration Paiements",
+    challenge: "Offrir une expérience d'apprentissage fluide sur mobile sous faible bande passante tout en garantissant des transactions Mobile Money rapides et sécurisées.",
+    solution: "Architecture React Native optimisée avec mise en cache des vidéos/ressources, passerelle de paiement Mobile Money résiliente et tableau de bord formateur intuitif.",
+    results: [
+      "Publication officielle sur le Google Play Store",
+      "Gestion complète du catalogue de cours et streaming vidéo optimisé",
+      "Paiements instantanés par Mobile Money & cartes bancaires"
+    ],
+    gallery: [
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1000&q=80",
+      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1000&q=80",
+      "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1000&q=80"
+    ]
   },
   {
     id: 3,
@@ -250,6 +280,21 @@ export const portfolioProjects = [
     impact: "Digitalisation intégrale des processus académiques",
     image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&q=80",
     status: "Déployé",
+    client: "Établissements d'Enseignement Supérieur",
+    year: "2023",
+    role: "Conception logicielle, Développement Web & Base de Données",
+    challenge: "Remplacer des processus papiers dispersés par une plateforme centralisée accessible par des milliers d'étudiants simultanément lors des examens et rentrées.",
+    solution: "Déploiement d'une application web modulaire avec portails dédiés (Administration, Enseignants, Étudiants), génération automatisée des bulletins et suivi des frais.",
+    results: [
+      "Zéro perte de données scolaires et temps d'inscription divisé par 4",
+      "Consultation instantanée des notes et emplois du temps en ligne",
+      "Automatisation des attestations et relevés académiques"
+    ],
+    gallery: [
+      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1000&q=80",
+      "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1000&q=80",
+      "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1000&q=80"
+    ]
   },
   {
     id: 4,
@@ -260,6 +305,21 @@ export const portfolioProjects = [
     impact: "Suivi automatisé & assistance conversationnelle 24/7",
     image: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=800&q=80",
     status: "En production",
+    client: "Organisme de Crédit / Microfinance",
+    year: "2024",
+    role: "Développement Frontend, Intégration LLM & Moteur de Calcul",
+    challenge: "Réduire les retards d'échéances et le temps passé par les gestionnaires de crédit à répondre aux interrogations récurrentes des emprunteurs.",
+    solution: "Plateforme web combinant un tableau d'amortissement interactif et un agent conversationnel entraîné sur les conditions contractuelles pour des réponses instantanées.",
+    results: [
+      "Support emprunteur disponible 24h/24 sans délai d'attente",
+      "Alertes automatiques avant échéances réduisant significativement les impayés",
+      "Calculatrice d'emprunt et simulation de remboursement en temps réel"
+    ],
+    gallery: [
+      "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=1000&q=80",
+      "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=1000&q=80",
+      "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1000&q=80"
+    ]
   },
   {
     id: 5,
@@ -270,6 +330,21 @@ export const portfolioProjects = [
     impact: "+250% d'opportunités qualifiées générées",
     image: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&q=80",
     status: "En production",
+    client: "Global Softworks & Entreprises Partenaires",
+    year: "2024",
+    role: "Conception de l'agent IA, Intégration API LLM & Scraping éthique",
+    challenge: "Automatiser la prospection commerciale fastidieuse tout en maintenant une ultra-personnalisation dans les messages de prise de contact.",
+    solution: "Déploiement d'Hermès Agent avec moteur d'analyse des besoins prospects, qualification selon matrice BANT et intégration directe dans le CRM.",
+    results: [
+      "Hausse de 250% des leads qualifiés générés par mois",
+      "Zéro intervention humaine requise sur la phase d'accroche initiale",
+      "Taux de réponse commerciale multiplié par 3"
+    ],
+    gallery: [
+      "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1000&q=80",
+      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1000&q=80",
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1000&q=80"
+    ]
   },
   {
     id: 6,
@@ -280,6 +355,21 @@ export const portfolioProjects = [
     impact: "Simulation réaliste d'attaques complexes",
     image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80",
     status: "Réalisé",
+    client: "Environnement d'entraînement & Audit Sécurité",
+    year: "2024",
+    role: "Architecture de test, Simulation Offensive (Red) & Défensive (Blue)",
+    challenge: "Fournir un banc d'essai sécurisé et isolé pour évaluer la résistance d'infrastructures réelles face à des attaques cyber sophistiquées.",
+    solution: "Mise en place d'un réseau virtualisé scénarisant chaque phase de la cyber kill chain avec instrumentation de surveillance et journaux d'audit.",
+    results: [
+      "Cartographie précise des vulnérabilités critiques avant mise en prod",
+      "Élaboration de guides de remédiation et durcissement des systèmes",
+      "Formation pratique des équipes de défense face aux cyberattaques"
+    ],
+    gallery: [
+      "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1000&q=80",
+      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1000&q=80",
+      "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1000&q=80"
+    ]
   },
   {
     id: 7,
@@ -290,6 +380,21 @@ export const portfolioProjects = [
     impact: "Surveillance proactive & alertes temps réel",
     image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80",
     status: "Opérationnel",
+    client: "Infrastructures d'Entreprise Protégées",
+    year: "2023 - 2024",
+    role: "Ingénierie Sécurité Réseau & Configuration SIEM",
+    challenge: "Détecter les anomalies et tentatives d'intrusion périmétrique sans ralentir les débits réseaux des utilisateurs en interne.",
+    solution: "Installation et réglage fin du moteur Suricata en écoute passive avec règles personnalisées et centralisation des alertes de sécurité.",
+    results: [
+      "Surveillance continue 24/7 de l'intégralité du trafic réseau entrant/sortant",
+      "Alertes instantanées en cas de signature suspecte ou de scan de ports",
+      "Visibilité totale sur les flux suspects et blocage proactif"
+    ],
+    gallery: [
+      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1000&q=80",
+      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1000&q=80",
+      "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1000&q=80"
+    ]
   },
   {
     id: 8,
@@ -300,6 +405,21 @@ export const portfolioProjects = [
     impact: "Administration centralisée & haute disponibilité",
     image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80",
     status: "Réalisé",
+    client: "PME & Environnement Entreprise",
+    year: "2023",
+    role: "Administration Systèmes & Réseaux, Contrôleur de Domaine",
+    challenge: "Structurer un domaine informatique d'entreprise sécurisé avec gestion granulaire des droits d'accès et continuité de service.",
+    solution: "Déploiement sous Windows Server d'Active Directory, paramétrage DNS/DHCP redondant, politiques de groupe (GPO) restrictives et partages sécurisés.",
+    results: [
+      "Gestion centralisée de l'ensemble des comptes et terminaux du réseau",
+      "Application immédiate des règles de sécurité via GPO",
+      "Isolation des départements et sauvegarde automatisée des données"
+    ],
+    gallery: [
+      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1000&q=80",
+      "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=1000&q=80",
+      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1000&q=80"
+    ]
   },
   {
     id: 9,
@@ -310,6 +430,21 @@ export const portfolioProjects = [
     impact: "+99% de disponibilité des parcs informatiques",
     image: "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=800&q=80",
     status: "Actif (2020 - Présent)",
+    client: "Parcs informatiques d'entreprises & Professionnels",
+    year: "2020 - Présent",
+    role: "Support Technique, Maintenance Préventive & Curative",
+    challenge: "Minimiser au maximum les temps d'arrêt des postes et pannes matérielles/logicielles qui impactent l'activité quotidienne des employés.",
+    solution: "Plan de maintenance périodique, durcissement antivirus, nettoyage système, dépannage express sur site et téléassistance à distance.",
+    results: [
+      "Taux de disponibilité des postes maintenus supérieur à 99%",
+      "Intervention rapide sur incidents bloquants en moins de 2 heures",
+      "Sécurisation des sauvegardes et renouvellement maîtrisé du matériel"
+    ],
+    gallery: [
+      "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=1000&q=80",
+      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=1000&q=80",
+      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1000&q=80"
+    ]
   },
   {
     id: 10,
@@ -320,6 +455,21 @@ export const portfolioProjects = [
     impact: "+40% de revenus directs pour les coopératives",
     image: "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=700&q=80",
     status: "En production",
+    client: "Coopératives Agricoles & Distributeurs",
+    year: "2023 - 2024",
+    role: "Conception UI/UX, Développement Mobile React Native & Backend API",
+    challenge: "Supprimer les intermédiaires abusifs dans la chaîne de distribution agricole et permettre aux producteurs ruraux de vendre directement à juste prix.",
+    solution: "Application mobile intuitive intégrant le référencement des récoltes en temps réel, la commande directe et la gestion logistique des livraisons.",
+    results: [
+      "Augmentation constatée de +40% des revenus directs des coopératives",
+      "Interface simple utilisable même sur smartphones d'entrée de gamme",
+      "Suivi des commandes en direct et paiement sécurisé"
+    ],
+    gallery: [
+      "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=1000&q=80",
+      "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=1000&q=80",
+      "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1000&q=80"
+    ]
   },
 ];
 
