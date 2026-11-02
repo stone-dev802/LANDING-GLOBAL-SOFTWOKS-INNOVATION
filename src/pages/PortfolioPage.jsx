@@ -10,8 +10,10 @@ import {
   ShieldCheck,
   Bot,
   Smartphone,
-  Globe
+  Globe,
+  Eye
 } from 'lucide-react';
+import { useRouter } from '../router';
 import { portfolioProjects } from '../data/content';
 
 const categories = ['Tous', 'Web', 'Mobile', 'Réseau & Infra', 'Cybersécurité', 'IA & Agents'];
@@ -24,6 +26,7 @@ const SectionPill = ({ children }) => (
 );
 
 export default function PortfolioPage({ onOpenQuote }) {
+  const { navigate } = useRouter();
   const [active, setActive] = useState('Tous');
   const [selectedProject, setSelectedProject] = useState(null);
 
@@ -269,12 +272,14 @@ export default function PortfolioPage({ onOpenQuote }) {
                   <button
                     type="button"
                     onClick={() => {
+                      const id = selectedProject.id;
                       setSelectedProject(null);
-                      onOpenQuote();
+                      navigate(`project/${id}`);
                     }}
                     className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-[#0B2558] hover:bg-[#1565C0] text-white font-bold text-xs shadow-md transition-all cursor-pointer"
                   >
-                    <span>Lancer un projet similaire</span>
+                    <Eye className="w-4 h-4 text-amber-400" />
+                    <span>Voir plus</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </button>
                 </div>

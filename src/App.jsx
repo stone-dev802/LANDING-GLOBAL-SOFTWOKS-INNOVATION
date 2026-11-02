@@ -11,6 +11,7 @@ import PortfolioPage from './pages/PortfolioPage';
 import TeamPage from './pages/TeamPage';
 import BlogPage from './pages/BlogPage';
 import ContactPage from './pages/ContactPage';
+import ProjectDetailPage from './pages/ProjectDetailPage';
 
 /* ── Page router ── */
 function AppContent() {
@@ -28,6 +29,11 @@ function AppContent() {
   };
 
   const renderPage = () => {
+    if (currentPage.startsWith('project/')) {
+      const projectId = currentPage.replace('project/', '');
+      return <ProjectDetailPage projectId={projectId} onOpenQuote={openQuote} />;
+    }
+
     switch (currentPage) {
       case 'home':       return <HomePage    onOpenQuote={openQuote}/>;
       case 'about':      return <AboutPage   onOpenQuote={openQuote}/>;
