@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://landing-global-softwoks-innovation-eight.vercel.app/sitemap.xml
