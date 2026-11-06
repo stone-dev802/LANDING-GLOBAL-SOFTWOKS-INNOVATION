@@ -32,6 +32,7 @@ import { companyInfo } from '../data/content';
 export default function QuoteModal({ isOpen, onClose, preselectedService }) {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
   const [charCount, setCharCount] = useState(0);
 
   const [form, setForm] = useState({
@@ -86,9 +87,32 @@ export default function QuoteModal({ isOpen, onClose, preselectedService }) {
     }
   };
 
-  const handleSubmit = (e) => {
-    // Soumission directe HTML POST vers FormSubmit
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     setLoading(true);
+    setError('');
+    try {
+      const res = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          type: 'quote',
+          name: form.name,
+          company: form.company,
+          email: form.email,
+          phone: form.phone,
+          services: form.services.join(', '),
+          budget: form.budget,
+          message: form.message,
+        }),
+      });
+      if (!res.ok) throw new Error('Erreur envoi');
+      setSubmitted(true);
+    } catch (err) {
+      setError('Une erreur est survenue. Réessayez ou contactez-nous via WhatsApp.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   const getWhatsAppUrl = () => {
@@ -180,18 +204,14 @@ export default function QuoteModal({ isOpen, onClose, preselectedService }) {
                 Remplissez ce formulaire et notre équipe d'experts vous répondra sous 24h ouvrées avec une proposition adaptée à vos besoins.
               </p>
 
+              {error && (
+                <div className="mb-3 px-4 py-2.5 rounded-lg bg-red-50 border border-red-200 text-red-700 text-xs font-medium">
+                  {error}
+                </div>
+              )}
               <form 
-                action="https://formsubmit.co/thomyashton@gmail.com" 
-                method="POST" 
                 onSubmit={handleSubmit}
               >
-                {/* Paramètres FormSubmit */}
-                <input type="hidden" name="_subject" value={`[DEVIS GSI] Nouvelle demande de ${form.name || 'Visiteur'}`} />
-                <input type="hidden" name="_template" value="table" />
-                <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_next" value="https://landing-global-softwoks-innovation-eight.vercel.app/?quote=success" />
-                <input type="hidden" name="Services_Selectionnes" value={form.services.join(', ') || 'Non précisé'} />
-                <input type="hidden" name="Budget" value={form.budget} />
                 
                 {/* 3. Inputs Row 1: Nom complet & Entreprise */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-2.5">

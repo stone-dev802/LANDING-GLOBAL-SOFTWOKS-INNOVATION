@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { MapPin, Mail, Phone, Clock, Send, CheckCircle, ArrowRight, MessageCircle, Loader2 } from 'lucide-react';
 import { companyInfo } from '../data/content';
 
@@ -12,19 +12,33 @@ const SectionPill = ({ children }) => (
 export default function ContactPage({ onOpenQuote }) {
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
   const [form, setForm] = useState({ name: '', email: '', phone: '', subject: '', message: '' });
 
-  useEffect(() => {
-    // Si retour de FormSubmit avec paramètre ?sent=true
-    if (window.location.search.includes('sent=true')) {
-      setSent(true);
-    }
-  }, []);
-
-  const handleSubmit = (e) => {
-    // La soumission se fait directement en POST HTML vers FormSubmit
-    // Cela garantit l'activation et la délivrance sans échec
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     setLoading(true);
+    setError('');
+    try {
+      const res = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          type: 'contact',
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          subject: form.subject,
+          message: form.message,
+        }),
+      });
+      if (!res.ok) throw new Error('Erreur lors de l\'envoi.');
+      setSent(true);
+    } catch (err) {
+      setError('Une erreur est survenue. Veuillez réessayer ou nous contacter via WhatsApp.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   const getWhatsAppUrl = () => {
@@ -136,17 +150,15 @@ export default function ContactPage({ onOpenQuote }) {
                   <>
                     <h2 className="text-2xl font-black text-[#0B2A6B] mb-1">Envoyez-nous un message</h2>
                     <p className="text-slate-500 text-sm mb-8">Nous vous répondons sous 24h ouvrées.</p>
+                    {error && (
+                      <div className="mb-4 px-4 py-3 rounded-xl bg-red-50 border border-red-200 text-red-700 text-sm font-medium">
+                        {error}
+                      </div>
+                    )}
                     <form 
-                      action="https://formsubmit.co/thomyashton@gmail.com" 
-                      method="POST" 
                       onSubmit={handleSubmit} 
                       className="space-y-5"
                     >
-                      {/* Paramètres FormSubmit */}
-                      <input type="hidden" name="_subject" value={`[CONTACT GSI] ${form.subject || 'Nouveau message'} de ${form.name || 'Visiteur'}`} />
-                      <input type="hidden" name="_template" value="table" />
-                      <input type="hidden" name="_captcha" value="false" />
-                      <input type="hidden" name="_next" value="https://landing-global-softwoks-innovation-eight.vercel.app/contact?sent=true" />
 
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                         <div>
