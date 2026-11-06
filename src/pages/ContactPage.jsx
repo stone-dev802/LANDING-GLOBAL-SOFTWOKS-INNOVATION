@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { MapPin, Mail, Phone, Clock, Send, CheckCircle, ArrowRight, MessageCircle, Loader2 } from 'lucide-react';
 import { companyInfo } from '../data/content';
 
@@ -14,34 +14,17 @@ export default function ContactPage({ onOpenQuote }) {
   const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({ name: '', email: '', phone: '', subject: '', message: '' });
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-
-    try {
-      await fetch("https://formsubmit.co/ajax/thomyashton@gmail.com", {
-        method: "POST",
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          _subject: `[CONTACT GSI] ${form.subject || 'Nouveau message'} de ${form.name}`,
-          _template: "table",
-          _captcha: "false",
-          Nom: form.name,
-          Email: form.email,
-          Telephone: form.phone,
-          Sujet: form.subject || 'Non précisé',
-          Message: form.message
-        })
-      });
-    } catch (err) {
-      console.warn("Envoi email silencieux :", err);
-    } finally {
-      setLoading(false);
+  useEffect(() => {
+    // Si retour de FormSubmit avec paramètre ?sent=true
+    if (window.location.search.includes('sent=true')) {
       setSent(true);
     }
+  }, []);
+
+  const handleSubmit = (e) => {
+    // La soumission se fait directement en POST HTML vers FormSubmit
+    // Cela garantit l'activation et la délivrance sans échec
+    setLoading(true);
   };
 
   const getWhatsAppUrl = () => {
@@ -153,18 +136,29 @@ export default function ContactPage({ onOpenQuote }) {
                   <>
                     <h2 className="text-2xl font-black text-[#0B2A6B] mb-1">Envoyez-nous un message</h2>
                     <p className="text-slate-500 text-sm mb-8">Nous vous répondons sous 24h ouvrées.</p>
-                    <form onSubmit={handleSubmit} className="space-y-5">
+                    <form 
+                      action="https://formsubmit.co/thomyashton@gmail.com" 
+                      method="POST" 
+                      onSubmit={handleSubmit} 
+                      className="space-y-5"
+                    >
+                      {/* Paramètres FormSubmit */}
+                      <input type="hidden" name="_subject" value={`[CONTACT GSI] ${form.subject || 'Nouveau message'} de ${form.name || 'Visiteur'}`} />
+                      <input type="hidden" name="_template" value="table" />
+                      <input type="hidden" name="_captcha" value="false" />
+                      <input type="hidden" name="_next" value="https://landing-global-softwoks-innovation-eight.vercel.app/contact?sent=true" />
+
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                         <div>
                           <label className="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-1.5">Nom complet *</label>
-                          <input type="text" required value={form.name}
+                          <input type="text" name="Nom" required value={form.name}
                             onChange={e => setForm({...form, name: e.target.value})}
                             placeholder="Jean Dupont"
                             className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-[#FBBF24] focus:ring-1 focus:ring-[#FBBF24] transition-colors"/>
                         </div>
                         <div>
                           <label className="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-1.5">Email *</label>
-                          <input type="email" required value={form.email}
+                          <input type="email" name="Email" required value={form.email}
                             onChange={e => setForm({...form, email: e.target.value})}
                             placeholder="votre@email.com"
                             className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-[#FBBF24] focus:ring-1 focus:ring-[#FBBF24] transition-colors"/>
@@ -173,14 +167,14 @@ export default function ContactPage({ onOpenQuote }) {
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                         <div>
                           <label className="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-1.5">Téléphone *</label>
-                          <input type="tel" required value={form.phone}
+                          <input type="tel" name="Telephone" required value={form.phone}
                             onChange={e => setForm({...form, phone: e.target.value})}
                             placeholder="+237 6xx xxx xxx"
                             className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-[#FBBF24] focus:ring-1 focus:ring-[#FBBF24] transition-colors"/>
                         </div>
                         <div>
                           <label className="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-1.5">Sujet</label>
-                          <select value={form.subject}
+                          <select name="Sujet" value={form.subject}
                             onChange={e => setForm({...form, subject: e.target.value})}
                             className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-[#FBBF24] focus:ring-1 focus:ring-[#FBBF24] transition-colors bg-white text-slate-700">
                             <option value="">Choisir un sujet</option>
@@ -194,7 +188,7 @@ export default function ContactPage({ onOpenQuote }) {
                       </div>
                       <div>
                         <label className="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-1.5">Votre message *</label>
-                        <textarea required rows={5} value={form.message}
+                        <textarea name="Message" required rows={5} value={form.message}
                           onChange={e => setForm({...form, message: e.target.value})}
                           placeholder="Décrivez votre projet ou votre besoin..."
                           className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-[#FBBF24] focus:ring-1 focus:ring-[#FBBF24] transition-colors resize-none"/>

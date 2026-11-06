@@ -86,37 +86,9 @@ export default function QuoteModal({ isOpen, onClose, preselectedService }) {
     }
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = (e) => {
+    // Soumission directe HTML POST vers FormSubmit
     setLoading(true);
-
-    // 1. Envoi asynchrone par Email via FormSubmit.co
-    try {
-      await fetch("https://formsubmit.co/ajax/thomyashton@gmail.com", {
-        method: "POST",
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          _subject: `[DEVIS GSI] Nouvelle demande de ${form.name}`,
-          _template: "table",
-          _captcha: "false",
-          Nom: form.name,
-          Entreprise: form.company || 'Particulier / Non précisé',
-          Email: form.email,
-          Telephone: form.phone,
-          Services_Souhaites: form.services.join(', ') || 'Non précisé',
-          Budget_Estime: form.budget,
-          Description_Projet: form.message
-        })
-      });
-    } catch (err) {
-      console.warn("Envoi email silencieux :", err);
-    } finally {
-      setLoading(false);
-      setSubmitted(true);
-    }
   };
 
   const getWhatsAppUrl = () => {
@@ -208,7 +180,18 @@ export default function QuoteModal({ isOpen, onClose, preselectedService }) {
                 Remplissez ce formulaire et notre équipe d'experts vous répondra sous 24h ouvrées avec une proposition adaptée à vos besoins.
               </p>
 
-              <form onSubmit={handleSubmit}>
+              <form 
+                action="https://formsubmit.co/thomyashton@gmail.com" 
+                method="POST" 
+                onSubmit={handleSubmit}
+              >
+                {/* Paramètres FormSubmit */}
+                <input type="hidden" name="_subject" value={`[DEVIS GSI] Nouvelle demande de ${form.name || 'Visiteur'}`} />
+                <input type="hidden" name="_template" value="table" />
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_next" value="https://landing-global-softwoks-innovation-eight.vercel.app/?quote=success" />
+                <input type="hidden" name="Services_Selectionnes" value={form.services.join(', ') || 'Non précisé'} />
+                <input type="hidden" name="Budget" value={form.budget} />
                 
                 {/* 3. Inputs Row 1: Nom complet & Entreprise */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-2.5">
@@ -222,6 +205,7 @@ export default function QuoteModal({ isOpen, onClose, preselectedService }) {
                       <User className="w-3.5 h-3.5 text-slate-400 absolute left-3 top-2.5" />
                       <input
                         type="text"
+                        name="Nom"
                         required
                         value={form.name}
                         onChange={(e) => setForm({ ...form, name: e.target.value })}
@@ -241,6 +225,7 @@ export default function QuoteModal({ isOpen, onClose, preselectedService }) {
                       <Building2 className="w-3.5 h-3.5 text-slate-400 absolute left-3 top-2.5" />
                       <input
                         type="text"
+                        name="Entreprise"
                         value={form.company}
                         onChange={(e) => setForm({ ...form, company: e.target.value })}
                         placeholder="Mon Entreprise SARL"
@@ -262,6 +247,7 @@ export default function QuoteModal({ isOpen, onClose, preselectedService }) {
                       <Mail className="w-3.5 h-3.5 text-slate-400 absolute left-3 top-2.5" />
                       <input
                         type="email"
+                        name="Email"
                         required
                         value={form.email}
                         onChange={(e) => setForm({ ...form, email: e.target.value })}
@@ -281,6 +267,7 @@ export default function QuoteModal({ isOpen, onClose, preselectedService }) {
                       <Phone className="w-3.5 h-3.5 text-slate-400 absolute left-3 top-2.5" />
                       <input
                         type="tel"
+                        name="Telephone"
                         required
                         value={form.phone}
                         onChange={(e) => setForm({ ...form, phone: e.target.value })}
@@ -370,6 +357,7 @@ export default function QuoteModal({ isOpen, onClose, preselectedService }) {
                   <div className="relative">
                     <FileText className="w-3.5 h-3.5 text-slate-400 absolute left-3 top-2.5" />
                     <textarea
+                      name="Description_Projet"
                       required
                       rows={2}
                       value={form.message}
