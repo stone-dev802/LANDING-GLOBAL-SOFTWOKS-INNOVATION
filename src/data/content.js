@@ -726,3 +726,124 @@ export const aiBotKnowledge = [
     response: "Nous réalisons l'installation complète de votre réseau d'entreprise : câblage structuré cat 6/6A/7, baies de brassage, fibre optique, routeurs & switchs Cisco / MikroTik, et Wi-Fi professionnel haute couverture.",
   },
 ];
+
+/* ─── RÉFÉRENCES, PREUVES TERRAIN & DÉMOS EN ACTION ─────────────────── */
+export const proofReferences = [
+  {
+    id: "ref-1",
+    title: "Traçabilité & Cartographie Data Lineage",
+    client: "Afriland First Bank",
+    category: "Démo Logiciel",
+    type: "video", // video or photo
+    badge: "Production Bancaire",
+    duration: "1:45",
+    videoUrl: "", // L'utilisateur pourra renseigner le mp4 ou lien direct
+    thumbnail: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1200&q=80",
+    description: "Démonstration du flux de traçabilité des transactions et cartographie dynamique du cycle de vie des données bancaires en temps réel.",
+    highlights: [
+      "Traçabilité financière de bout en bout",
+      "Tableau de bord de conformité réglementaire",
+      "Sécurité des données de niveau bancaire"
+    ],
+    date: "2024",
+    location: "Yaoundé, Cameroun"
+  },
+  {
+    id: "ref-2",
+    title: "Câblage Structuré & Brassage Baie Serveur",
+    client: "Direction PME & Siège Entreprise",
+    category: "Chantier Réseau",
+    type: "photo",
+    badge: "Chantier Livré",
+    thumbnail: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80",
+    description: "Installation complète d'une baie de brassage 42U avec étiquetage normé, cheminement des câbles Cat 6A et organisation soignée des switchs manageables.",
+    highlights: [
+      "Certification des liaisons cuivre Cat 6A",
+      "Organisation des cordons et passe-fils haute densité",
+      "Alimentation secourue sur onduleur en baie"
+    ],
+    date: "2024",
+    location: "Douala / Yaoundé"
+  },
+  {
+    id: "ref-3",
+    title: "Pose de Caméras IP & Centrale NVR 16 Voies",
+    client: "Entrepôt Logistique & Espaces Commerciaux",
+    category: "Vidéosurveillance",
+    type: "photo",
+    badge: "Protection 24/7",
+    thumbnail: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=1200&q=80",
+    description: "Déploiement de caméras dômes et tubes extérieures vision nocturne 4K avec configuration d'accès sécurisé en direct sur smartphones de la direction.",
+    highlights: [
+      "Vision nocturne infrarouge longue portée",
+      "Détection intelligente d'intrusion avec alertes mobiles",
+      "Enregistrement continu redondant sur disque dur pro"
+    ],
+    date: "2024",
+    location: "Yaoundé"
+  },
+  {
+    id: "ref-4",
+    title: "Démonstration Mobile TurnerMarket",
+    client: "Turner EdTech (Google Play Store)",
+    category: "Démo Logiciel",
+    type: "video",
+    badge: "Sur Play Store",
+    duration: "2:10",
+    videoUrl: "",
+    thumbnail: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80",
+    description: "Parcours utilisateur complet sur l'application Android : recherche de cours, streaming vidéo avec mise en cache locale et paiement par Mobile Money.",
+    highlights: [
+      "Expérience utilisateur fluide à faible débit",
+      "Paiement Mobile Money instantané et sécurisé",
+      "Note utilisateur 4.8/5 sur Google Play Store"
+    ],
+    date: "2024",
+    location: "Mobile Android"
+  },
+  {
+    id: "ref-5",
+    title: "Détection d'Attaque en Direct avec Suricata",
+    client: "Laboratoire Cyber & Pôle Défense",
+    category: "Cybersécurité",
+    type: "video",
+    badge: "Audit & SOC",
+    duration: "3:00",
+    videoUrl: "",
+    thumbnail: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&q=80",
+    description: "Capture en temps réel de détection de scan de vulnérabilités et tentative d'injection SQL interceptée et bloquée automatiquement par les règles IDS.",
+    highlights: [
+      "Alertes d'intrusion générées en moins de 1 seconde",
+      "Blocage automatique des adresses IP suspectes",
+      "Tableau de bord SOC Kibana / Suricata"
+    ],
+    date: "2024",
+    location: "Plateforme SOC"
+  },
+  {
+    id: "ref-6",
+    title: "Application AgroLiv sur le Terrain",
+    client: "Coopératives Agricoles",
+    category: "Démo Logiciel",
+    type: "photo",
+    badge: "Terrain Réel",
+    thumbnail: "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=1200&q=80",
+    description: "Utilisation par les producteurs ruraux de la plateforme mobile AgroLiv pour enregistrer et négocier leurs récoltes directement auprès des distributeurs.",
+    highlights: [
+      "Application robuste hors-connexion",
+      "+40% d'augmentation des marges directes",
+      "Suivi logistique et géolocalisation des livraisons"
+    ],
+    date: "2024",
+    location: "Zone Ouest / Centre"
+  }
+];
+
+export const clientLogos = [
+  { name: "Afriland First Bank", role: "Banque & Finance" },
+  { name: "Turner EdTech", role: "Formation en Ligne" },
+  { name: "CHRACERH", role: "Santé Publique" },
+  { name: "Gescam", role: "Enseignement Supérieur" },
+  { name: "Coopératives AgroLiv", role: "Secteur Agricole" },
+  { name: "PME & Industries", role: "Réseaux & Cybersécurité" }
+];

@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import { useRouter } from '../router';
 import { portfolioProjects } from '../data/content';
+import ProofReferencesSection from '../components/ProofReferencesSection';
 
 const categories = ['Tous', 'Web', 'Mobile', 'Réseau & Infra', 'Cybersécurité', 'IA & Agents'];
 
@@ -178,6 +179,15 @@ export default function PortfolioPage({ onOpenQuote }) {
 
         </div>
       </section>
+
+      {/* ── Références, Preuves terrain & Démos vidéos ── */}
+      <div id="references">
+        <ProofReferencesSection 
+          onOpenQuote={onOpenQuote} 
+          title={<>Vidéos, captures réelles & <span className="text-[#FBBF24]">preuves de déploiement</span></>}
+          subtitle="Visionnez nos applications en fonctionnement réel et découvrez nos installations de serveurs, câblage et vidéosurveillance directement sur site."
+        />
+      </div>
 
       {/* Project Details Modal */}
       {selectedProject && (

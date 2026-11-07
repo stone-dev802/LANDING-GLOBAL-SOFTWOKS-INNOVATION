@@ -19,6 +19,7 @@ import {
 } from 'lucide-react';
 import { Link, useRouter } from '../router';
 import { companyInfo, heroPillars, servicesData, processSteps, portfolioProjects, aiBotKnowledge } from '../data/content';
+import ProofReferencesSection from '../components/ProofReferencesSection';
 
 /* ── small helpers ──────────────────────────────────── */
 const SectionPill = ({ color = 'blue', children }) => (
@@ -381,6 +382,9 @@ export default function HomePage({ onOpenQuote }) {
           </div>
         </div>
       </section>
+
+      {/* ══════ 6.5 PREUVES TERRAIN & RÉFÉRENCES (RÉALISATIONS EN ACTION) ══════ */}
+      <ProofReferencesSection onOpenQuote={onOpenQuote} limit={6} />
 
       {/* ══════ 7. AI WIDGET ════════════════════════════════════ */}
       <AiStrip onOpenQuote={onOpenQuote}/>
