@@ -872,6 +872,52 @@ export const proofReferences = [
     ],
     date: "2024",
     location: "Zone Ouest / Centre"
+  },
+  {
+    id: "ref-7",
+    title: "Câblage Réseau sur Chantier",
+    client: "Espaces Commerciaux & Entreprises",
+    category: "Chantier Réseau",
+    type: "video",
+    badge: "Réseau Structuré",
+    duration: "0:18",
+    videoUrl: "/projects/network/network-install-1.mp4",
+    thumbnail: "/projects/network/thumb-video1.jpg",
+    description: "Intervention de câblage réseau structuré sur chantier : pose de câbles, passages discrets et soignés, raccordements propres avec vérification de continuité.",
+    highlights: [
+      "Câblage RJ45 / coaxial propre et structuré",
+      "Passage de câbles intégré dans les cloisons",
+      "Tests de connectivité et validation sur site"
+    ],
+    gallery: [
+      "/projects/network/thumb-video1.jpg",
+      "/projects/network/thumb-video2.jpg"
+    ],
+    date: "2024",
+    location: "Yaoundé, Cameroun"
+  },
+  {
+    id: "ref-8",
+    title: "Installation Réseau & Équipements Actifs",
+    client: "PME & Entreprises Locales",
+    category: "Chantier Réseau",
+    type: "video",
+    badge: "Infrastructure Active",
+    duration: "0:43",
+    videoUrl: "/projects/network/network-install-2.mp4",
+    thumbnail: "/projects/network/thumb-video2.jpg",
+    description: "Déploiement complet d'une infrastructure réseau active : installation des équipements (switch, routeur), câblage structuré et baie de brassage, puis mise en service et tests.",
+    highlights: [
+      "Installation et paramétrage des équipements actifs",
+      "Câblage structuré et organisation de la baie",
+      "Mise en service et tests de connectivité réseau"
+    ],
+    gallery: [
+      "/projects/network/thumb-video2.jpg",
+      "/projects/network/thumb-video1.jpg"
+    ],
+    date: "2024",
+    location: "Yaoundé, Cameroun"
   }
 ];
 

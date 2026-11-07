@@ -1,5 +1,5 @@
-import React from 'react';
-import { Clock, User, ArrowRight, Tag } from 'lucide-react';
+import React, { useState } from 'react';
+import { Clock, User, ArrowRight, Tag, CheckCircle, Loader2 } from 'lucide-react';
 import { blogPosts } from '../data/content';
 
 const SectionPill = ({ children }) => (
@@ -10,6 +10,33 @@ const SectionPill = ({ children }) => (
 );
 
 export default function BlogPage() {
+  const [subEmail, setSubEmail] = useState('');
+  const [subStatus, setSubStatus] = useState('idle'); // idle | loading | success | error
+  const [subError, setSubError] = useState('');
+
+  const handleSubscribe = async (e) => {
+    e.preventDefault();
+    if (!subEmail) return;
+    setSubStatus('loading');
+    setSubError('');
+    try {
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: subEmail }),
+      });
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || 'Erreur lors de l\'inscription.');
+      }
+      setSubStatus('success');
+      setSubEmail('');
+    } catch (err) {
+      setSubStatus('error');
+      setSubError(err.message || 'Une erreur est survenue. Réessayez.');
+    }
+  };
+
   return (
     <div className="pt-24">
 
@@ -100,13 +127,36 @@ export default function BlogPage() {
           <div className="mt-16 bg-gradient-to-r from-[#0B2A6B] to-[#1565C0] rounded-3xl p-10 text-center text-white">
             <h3 className="text-2xl font-black mb-2">Restez informé(e) de nos actualités</h3>
             <p className="text-slate-300 text-sm mb-6">Recevez nos derniers articles et conseils tech directement dans votre boîte mail.</p>
-            <div className="flex flex-col sm:flex-row max-w-md mx-auto gap-3">
-              <input type="email" placeholder="Votre adresse email"
-                className="flex-grow px-5 py-3 rounded-full bg-white/10 border border-white/20 text-white placeholder-slate-300 text-sm focus:outline-none focus:border-[#FBBF24] transition-colors"/>
-              <button className="px-6 py-3 rounded-full bg-[#FBBF24] hover:bg-[#F59E0B] text-slate-950 font-black text-sm transition-all cursor-pointer">
-                S'abonner
-              </button>
-            </div>
+
+            {subStatus === 'success' ? (
+              <div className="flex items-center justify-center gap-3 py-3">
+                <CheckCircle className="w-6 h-6 text-emerald-400"/>
+                <p className="text-emerald-300 font-bold text-sm">Merci ! Vous êtes bien inscrit(e) à notre newsletter.</p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row max-w-md mx-auto gap-3">
+                <input
+                  type="email"
+                  required
+                  value={subEmail}
+                  onChange={e => setSubEmail(e.target.value)}
+                  placeholder="Votre adresse email"
+                  className="flex-grow px-5 py-3 rounded-full bg-white/10 border border-white/20 text-white placeholder-slate-300 text-sm focus:outline-none focus:border-[#FBBF24] transition-colors"
+                />
+                <button
+                  type="submit"
+                  disabled={subStatus === 'loading'}
+                  className="flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#FBBF24] hover:bg-[#F59E0B] disabled:opacity-60 text-slate-950 font-black text-sm transition-all cursor-pointer"
+                >
+                  {subStatus === 'loading' ? (
+                    <><Loader2 className="w-4 h-4 animate-spin"/> Envoi...</>
+                  ) : "S'abonner"}
+                </button>
+              </form>
+            )}
+            {subStatus === 'error' && (
+              <p className="mt-3 text-red-300 text-xs">{subError}</p>
+            )}
           </div>
         </div>
       </section>
