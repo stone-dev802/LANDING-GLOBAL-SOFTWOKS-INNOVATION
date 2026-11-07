@@ -61,15 +61,18 @@ export default function ServicesPage({ onOpenQuote }) {
                       ))}
                     </ul>
                   </div>
-                  <div className="flex gap-3 mt-2">
+                  <div className="flex flex-wrap items-center gap-2 mt-4 pt-3 border-t border-slate-100">
                     <button
                       onClick={() => setSelectedService(svc)}
-                      className="flex items-center gap-1.5 text-xs font-bold text-[#1565C0] hover:text-[#0B2A6B] transition-colors">
-                      Voir les détails <ArrowRight className="w-3.5 h-3.5"/>
+                      className="inline-flex items-center gap-1.5 text-xs font-bold px-3.5 py-2 rounded-xl bg-blue-50 text-[#1565C0] hover:bg-[#1565C0] hover:text-white transition-all cursor-pointer shadow-2xs"
+                    >
+                      <span>Voir les détails</span>
+                      <ArrowRight className="w-3.5 h-3.5"/>
                     </button>
                     <button
                       onClick={() => onOpenQuote(svc)}
-                      className="ml-auto text-xs font-bold bg-[#FBBF24] hover:bg-[#F59E0B] text-slate-950 px-4 py-2 rounded-full transition-all active:scale-95 cursor-pointer">
+                      className="ml-auto text-xs font-black bg-[#FBBF24] hover:bg-[#F59E0B] text-slate-950 px-4 py-2 rounded-full transition-all active:scale-95 cursor-pointer shadow-sm hover:shadow-md"
+                    >
                       Demander un devis
                     </button>
                   </div>

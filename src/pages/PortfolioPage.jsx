@@ -114,7 +114,7 @@ export default function PortfolioPage({ onOpenQuote }) {
             {filtered.map((p) => (
               <div 
                 key={p.id}
-                onClick={() => setSelectedProject(p)}
+                onClick={() => navigate(`project/${p.id}`)}
                 className="group bg-white rounded-3xl overflow-hidden border border-slate-200 hover:border-[#1565C0] hover:shadow-2xl shadow-sm transition-all duration-300 hover:-translate-y-2 flex flex-col cursor-pointer"
               >
                 {/* Image */}
@@ -168,9 +168,18 @@ export default function PortfolioPage({ onOpenQuote }) {
                     </div>
                   </div>
 
-                  <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#1565C0] group-hover:text-[#0B2558] transition-colors">
-                    <span>Explorer les détails</span>
-                    <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+                  <div className="pt-3 border-t border-slate-100 flex items-center justify-between">
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        navigate(`project/${p.id}`);
+                      }}
+                      className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-slate-50 group-hover:bg-[#1565C0] text-[#1565C0] group-hover:text-white font-bold text-xs transition-all shadow-xs cursor-pointer"
+                    >
+                      <span>Voir les détails</span>
+                      <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+                    </button>
                   </div>
                 </div>
               </div>

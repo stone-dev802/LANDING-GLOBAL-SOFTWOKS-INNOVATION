@@ -16,10 +16,13 @@ import {
   ExternalLink,
   ChevronRight,
   Target,
-  Lightbulb
+  Lightbulb,
+  Play,
+  Video,
+  Image as ImageIcon
 } from 'lucide-react';
 import { useRouter } from '../router';
-import { portfolioProjects } from '../data/content';
+import { portfolioProjects, proofReferences } from '../data/content';
 
 export default function ProjectDetailPage({ projectId, onOpenQuote }) {
   const { navigate } = useRouter();
@@ -45,6 +48,14 @@ export default function ProjectDetailPage({ projectId, onOpenQuote }) {
   const galleryImages = project.gallery && project.gallery.length > 0
     ? project.gallery
     : [project.image];
+
+  // Trouver si une référence / démo vidéo existe pour ce projet
+  const matchedProof = proofReferences.find((ref) => 
+    ref.title.toLowerCase().includes(project.title.toLowerCase().slice(0, 10)) ||
+    (project.client && ref.client.toLowerCase().includes(project.client.toLowerCase().slice(0, 8)))
+  );
+
+  const [activeMediaMode, setActiveMediaMode] = useState(matchedProof?.type === 'video' ? 'video' : 'photo');
 
   return (
     <div className="pt-24 min-h-screen bg-slate-50/60 pb-20">
@@ -108,37 +119,124 @@ export default function ProjectDetailPage({ projectId, onOpenQuote }) {
 
         {/* Gallery & Main visual showcase */}
         <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-sm mb-8">
-          <h2 className="text-xs font-black uppercase tracking-wider text-slate-400 mb-4 flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#0062FF]" />
-            Aperçus et captures réelles du projet
-          </h2>
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
+            <h2 className="text-xs font-black uppercase tracking-wider text-slate-400 flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-[#0062FF]" />
+              Démonstrations & Captures réelles
+            </h2>
 
-          {/* Active Large Display */}
-          <div className="relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-900 h-[320px] sm:h-[450px] lg:h-[520px] shadow-inner mb-4">
-            <img
-              src={activeImage}
-              alt={project.title}
-              className="w-full h-full object-cover transition-all duration-300"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
-          </div>
-
-          {/* Thumbnails Strip */}
-          {galleryImages.length > 1 && (
-            <div className="grid grid-cols-3 sm:grid-cols-4 gap-3 sm:gap-4">
-              {galleryImages.map((img, idx) => (
+            {/* Toggle Video / Photo si démo vidéo disponible */}
+            {matchedProof && (
+              <div className="inline-flex p-1 bg-slate-100 rounded-xl border border-slate-200/80 self-start sm:self-auto">
                 <button
-                  key={idx}
-                  onClick={() => setActiveImage(img)}
-                  className={`relative rounded-xl overflow-hidden h-20 sm:h-24 border-2 transition-all cursor-pointer ${
-                    activeImage === img
-                      ? 'border-[#0062FF] ring-2 ring-[#0062FF]/20 shadow-md scale-[1.02]'
-                      : 'border-slate-200 opacity-70 hover:opacity-100 hover:border-slate-300'
+                  type="button"
+                  onClick={() => setActiveMediaMode('photo')}
+                  className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                    activeMediaMode === 'photo'
+                      ? 'bg-white text-[#0B2558] shadow-sm'
+                      : 'text-slate-600 hover:text-slate-900'
                   }`}
                 >
-                  <img src={img} alt={`${project.title} capture ${idx + 1}`} className="w-full h-full object-cover" />
+                  <ImageIcon className="w-3.5 h-3.5 text-sky-600" />
+                  <span>Photos & Captures</span>
                 </button>
-              ))}
+
+                <button
+                  type="button"
+                  onClick={() => setActiveMediaMode('video')}
+                  className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                    activeMediaMode === 'video'
+                      ? 'bg-amber-400 text-slate-950 font-black shadow-sm'
+                      : 'text-slate-600 hover:text-slate-900'
+                  }`}
+                >
+                  <Video className="w-3.5 h-3.5" />
+                  <span>Démo en action / Vidéo</span>
+                </button>
+              </div>
+            )}
+          </div>
+
+          {/* Mode Démo Vidéo en action */}
+          {matchedProof && activeMediaMode === 'video' ? (
+            <div className="space-y-4">
+              <div className="relative rounded-2xl overflow-hidden border border-slate-900 bg-slate-950 h-[320px] sm:h-[450px] lg:h-[520px] shadow-2xl flex items-center justify-center">
+                <img
+                  src={matchedProof.thumbnail || activeImage}
+                  alt={matchedProof.title}
+                  className="w-full h-full object-cover opacity-70"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/40" />
+
+                <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center z-10">
+                  <div className="w-20 h-20 rounded-full bg-amber-400 text-slate-950 flex items-center justify-center shadow-2xl shadow-amber-400/40 mb-4 hover:scale-110 transition-transform cursor-pointer">
+                    <Play className="w-8 h-8 fill-slate-950 ml-1" />
+                  </div>
+                  <span className="bg-slate-900/90 text-amber-300 border border-amber-400/30 text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full mb-2">
+                    {matchedProof.badge || "Démonstration en direct"}
+                  </span>
+                  <h3 className="text-xl sm:text-2xl font-black text-white max-w-lg mb-2">
+                    {matchedProof.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-slate-300 max-w-md">
+                    {matchedProof.description}
+                  </p>
+                </div>
+
+                <div className="absolute bottom-4 left-6 flex items-center gap-2">
+                  <span className="bg-emerald-500 text-slate-950 text-[10px] font-black px-2.5 py-0.5 rounded-full shadow-xs">
+                    Vérifié sur le terrain
+                  </span>
+                  <span className="bg-slate-900/80 text-white text-[10px] font-semibold px-2.5 py-0.5 rounded-full border border-white/20">
+                    {matchedProof.location || "En production"}
+                  </span>
+                </div>
+              </div>
+
+              {/* Points forts de la démo */}
+              <div className="p-4 bg-sky-50/60 rounded-2xl border border-sky-100 flex flex-wrap gap-4 items-center justify-between">
+                <span className="text-xs font-bold text-[#0B2558]">Points certifiés lors du déploiement :</span>
+                <div className="flex flex-wrap gap-3">
+                  {matchedProof.highlights.map((h, idx) => (
+                    <span key={idx} className="inline-flex items-center gap-1.5 text-xs text-slate-700 bg-white px-3 py-1 rounded-lg border border-slate-200">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" />
+                      {h}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ) : (
+            /* Mode Captures d'écrans & Photos */
+            <div>
+              {/* Active Large Display */}
+              <div className="relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-900 h-[320px] sm:h-[450px] lg:h-[520px] shadow-inner mb-4">
+                <img
+                  src={activeImage}
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-all duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+              </div>
+
+              {/* Thumbnails Strip */}
+              {galleryImages.length > 1 && (
+                <div className="grid grid-cols-3 sm:grid-cols-4 gap-3 sm:gap-4">
+                  {galleryImages.map((img, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setActiveImage(img)}
+                      className={`relative rounded-xl overflow-hidden h-20 sm:h-24 border-2 transition-all cursor-pointer ${
+                        activeImage === img
+                          ? 'border-[#0062FF] ring-2 ring-[#0062FF]/20 shadow-md scale-[1.02]'
+                          : 'border-slate-200 opacity-70 hover:opacity-100 hover:border-slate-300'
+                      }`}
+                    >
+                      <img src={img} alt={`${project.title} capture ${idx + 1}`} className="w-full h-full object-cover" />
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
           )}
         </div>
