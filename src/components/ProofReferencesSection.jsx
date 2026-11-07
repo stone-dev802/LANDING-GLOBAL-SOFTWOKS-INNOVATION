@@ -24,11 +24,13 @@ export default function ProofReferencesSection({ onOpenQuote, title, subtitle, s
   const [selectedProof, setSelectedProof] = useState(null);
   const [activeModalMedia, setActiveModalMedia] = useState('video');
   const [activeModalImg, setActiveModalImg] = useState(null);
+  const [activeModalVideoIdx, setActiveModalVideoIdx] = useState(0);
 
   const handleOpenProof = (item) => {
     setSelectedProof(item);
     setActiveModalMedia(item.videoUrl ? 'video' : 'photo');
     setActiveModalImg(item.thumbnail);
+    setActiveModalVideoIdx(0);
   };
 
   const categories = ['Tous', 'Démo Logiciel', 'Chantier Réseau', 'Vidéosurveillance', 'Cybersécurité'];
@@ -247,15 +249,39 @@ export default function ProofReferencesSection({ onOpenQuote, title, subtitle, s
             )}
 
             <div className="overflow-y-auto">
+              {/* Sélecteur de vidéos si plusieurs démos sont associées */}
+              {activeModalMedia === 'video' && selectedProof.videoList && selectedProof.videoList.length > 1 && (
+                <div className="flex flex-wrap items-center gap-2 px-6 pt-4 pb-2 bg-slate-950/90 border-b border-slate-800">
+                  <span className="text-[11px] font-bold text-sky-300">Vidéos :</span>
+                  {selectedProof.videoList.map((vid, idx) => (
+                    <button
+                      key={idx}
+                      type="button"
+                      onClick={() => setActiveModalVideoIdx(idx)}
+                      className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                        activeModalVideoIdx === idx
+                          ? 'bg-[#FBBF24] text-slate-950 shadow-sm'
+                          : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
+                      }`}
+                    >
+                      <Play className={`w-2.5 h-2.5 ${activeModalVideoIdx === idx ? 'fill-slate-950' : 'fill-slate-400'}`} />
+                      <span>{vid.title}</span>
+                      <span className="text-[10px] opacity-75">({vid.duration})</span>
+                    </button>
+                  ))}
+                </div>
+              )}
+
               {/* Media Player Area */}
               <div className="relative h-64 sm:h-80 bg-black flex items-center justify-center overflow-hidden">
-                {activeModalMedia === 'video' && selectedProof.videoUrl ? (
+                {activeModalMedia === 'video' && (selectedProof.videoList ? selectedProof.videoList[activeModalVideoIdx]?.url : selectedProof.videoUrl) ? (
                   <video
-                    src={selectedProof.videoUrl}
+                    key={selectedProof.videoList ? selectedProof.videoList[activeModalVideoIdx]?.url : selectedProof.videoUrl}
+                    src={selectedProof.videoList ? selectedProof.videoList[activeModalVideoIdx]?.url : selectedProof.videoUrl}
                     controls
                     autoPlay
                     playsInline
-                    poster={selectedProof.thumbnail}
+                    poster={selectedProof.videoList ? (selectedProof.videoList[activeModalVideoIdx]?.thumbnail || selectedProof.thumbnail) : selectedProof.thumbnail}
                     className="w-full h-full object-contain bg-black"
                   />
                 ) : (

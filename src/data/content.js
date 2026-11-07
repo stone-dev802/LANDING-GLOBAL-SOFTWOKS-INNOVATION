@@ -425,27 +425,27 @@ export const portfolioProjects = [
   },
   {
     id: 9,
-    title: "Réseau d'Entreprise Simulé",
+    title: "Câblage Structuré & Réseau d'Entreprise",
     category: "Réseau & Infra",
-    tags: ["Windows Server", "Active Directory", "DNS / DHCP", "GPO", "Sécurité"],
-    description: "Mise en place et administration d'une infrastructure réseau d'entreprise complète simulée sous Windows Server avec gestion centralisée des accès, rôles et politiques via Active Directory.",
-    impact: "Administration centralisée & haute disponibilité",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80",
-    status: "Réalisé",
-    client: "PME & Environnement Entreprise",
-    year: "2023",
-    role: "Administration Systèmes & Réseaux, Contrôleur de Domaine",
-    challenge: "Structurer un domaine informatique d'entreprise sécurisé avec gestion granulaire des droits d'accès et continuité de service.",
-    solution: "Déploiement sous Windows Server d'Active Directory, paramétrage DNS/DHCP redondant, politiques de groupe (GPO) restrictives et partages sécurisés.",
+    tags: ["Câblage Structuré", "Équipements Actifs", "Windows Server", "Active Directory", "DNS / DHCP"],
+    description: "Déploiement complet d'une infrastructure réseau d'entreprise sur site : câblage structuré soigné, passage de câbles, raccordement et paramétrage des équipements actifs (switchs, routeurs) et administration centralisée sous Windows Server.",
+    impact: "Câblage certifié, haute disponibilité & gestion centralisée",
+    image: "/projects/network/thumb-video1.jpg",
+    status: "Réalisé sur site",
+    client: "Espaces Commerciaux & PME",
+    year: "2024",
+    role: "Câblage réseau structuré, pose équipements actifs, administration systèmes",
+    challenge: "Réaliser un câblage propre et discret dans les cloisons, raccorder et paramétrer les équipements réseau actifs et assurer une administration sécurisée du réseau.",
+    solution: "Tirage de câbles soigné, raccordements RJ45 testés, mise en service des switchs/routeurs et configuration du contrôleur de domaine.",
     results: [
-      "Gestion centralisée de l'ensemble des comptes et terminaux du réseau",
-      "Application immédiate des règles de sécurité via GPO",
-      "Isolation des départements et sauvegarde automatisée des données"
+      "Passage de câbles invisible et connexions RJ45 testées sur site",
+      "Équipements actifs opérationnels et interconnectés",
+      "Administration centralisée des accès et continuité de service"
     ],
+    proofId: "ref-2",
     gallery: [
-      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1000&q=80",
-      "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=1000&q=80",
-      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1000&q=80"
+      "/projects/network/thumb-video1.jpg",
+      "/projects/network/thumb-video2.jpg"
     ]
   },
   {
@@ -777,20 +777,41 @@ export const proofReferences = [
   },
   {
     id: "ref-2",
-    title: "Câblage Structuré & Brassage Baie Serveur",
-    client: "Direction PME & Siège Entreprise",
+    title: "Câblage Structuré & Déploiement Réseau sur Chantier",
+    client: "Espaces Commerciaux & Entreprises",
     category: "Chantier Réseau",
-    type: "photo",
-    badge: "Chantier Livré",
-    thumbnail: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80",
-    description: "Installation complète d'une baie de brassage 42U avec étiquetage normé, cheminement des câbles Cat 6A et organisation soignée des switchs manageables.",
-    highlights: [
-      "Certification des liaisons cuivre Cat 6A",
-      "Organisation des cordons et passe-fils haute densité",
-      "Alimentation secourue sur onduleur en baie"
+    type: "video",
+    badge: "Chantier Réseau Réel",
+    duration: "0:43",
+    videoUrl: "/projects/network/network-install-2.mp4",
+    videoList: [
+      {
+        title: "Installation & Équipements Actifs",
+        duration: "0:43",
+        url: "/projects/network/network-install-2.mp4",
+        thumbnail: "/projects/network/thumb-video2.jpg"
+      },
+      {
+        title: "Câblage & Passages de Câbles",
+        duration: "0:18",
+        url: "/projects/network/network-install-1.mp4",
+        thumbnail: "/projects/network/thumb-video1.jpg"
+      }
     ],
+    thumbnail: "/projects/network/thumb-video1.jpg",
+    description: "Intervention complète de câblage structuré et mise en service réseau sur site : passage discret des câbles RJ45/coaxiaux dans les cloisons, raccordement propre, pose des équipements actifs et validation de connectivité.",
+    highlights: [
+      "Câblage RJ45 / coaxial propre et passages invisibles",
+      "Pose & paramétrage des équipements actifs (switchs, routeurs)",
+      "Tests de continuité, certification et validation sur site"
+    ],
+    gallery: [
+      "/projects/network/thumb-video1.jpg",
+      "/projects/network/thumb-video2.jpg"
+    ],
+    projectId: 9,
     date: "2024",
-    location: "Douala / Yaoundé"
+    location: "Yaoundé, Cameroun"
   },
   {
     id: "ref-3",
@@ -872,52 +893,6 @@ export const proofReferences = [
     ],
     date: "2024",
     location: "Zone Ouest / Centre"
-  },
-  {
-    id: "ref-7",
-    title: "Câblage Réseau sur Chantier",
-    client: "Espaces Commerciaux & Entreprises",
-    category: "Chantier Réseau",
-    type: "video",
-    badge: "Réseau Structuré",
-    duration: "0:18",
-    videoUrl: "/projects/network/network-install-1.mp4",
-    thumbnail: "/projects/network/thumb-video1.jpg",
-    description: "Intervention de câblage réseau structuré sur chantier : pose de câbles, passages discrets et soignés, raccordements propres avec vérification de continuité.",
-    highlights: [
-      "Câblage RJ45 / coaxial propre et structuré",
-      "Passage de câbles intégré dans les cloisons",
-      "Tests de connectivité et validation sur site"
-    ],
-    gallery: [
-      "/projects/network/thumb-video1.jpg",
-      "/projects/network/thumb-video2.jpg"
-    ],
-    date: "2024",
-    location: "Yaoundé, Cameroun"
-  },
-  {
-    id: "ref-8",
-    title: "Installation Réseau & Équipements Actifs",
-    client: "PME & Entreprises Locales",
-    category: "Chantier Réseau",
-    type: "video",
-    badge: "Infrastructure Active",
-    duration: "0:43",
-    videoUrl: "/projects/network/network-install-2.mp4",
-    thumbnail: "/projects/network/thumb-video2.jpg",
-    description: "Déploiement complet d'une infrastructure réseau active : installation des équipements (switch, routeur), câblage structuré et baie de brassage, puis mise en service et tests.",
-    highlights: [
-      "Installation et paramétrage des équipements actifs",
-      "Câblage structuré et organisation de la baie",
-      "Mise en service et tests de connectivité réseau"
-    ],
-    gallery: [
-      "/projects/network/thumb-video2.jpg",
-      "/projects/network/thumb-video1.jpg"
-    ],
-    date: "2024",
-    location: "Yaoundé, Cameroun"
   }
 ];
 
