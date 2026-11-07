@@ -55,7 +55,7 @@ export default function ProjectDetailPage({ projectId, onOpenQuote }) {
     (project.client && ref.client.toLowerCase().includes(project.client.toLowerCase().slice(0, 8)))
   );
 
-  const [activeMediaMode, setActiveMediaMode] = useState(matchedProof?.type === 'video' ? 'video' : 'photo');
+  const [activeMediaMode, setActiveMediaMode] = useState('photo');
 
   return (
     <div className="pt-24 min-h-screen bg-slate-50/60 pb-20">
