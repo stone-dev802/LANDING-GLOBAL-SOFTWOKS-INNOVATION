@@ -118,8 +118,8 @@ export default async function handler(req, res) {
         <div style="font-size: 12px; color: #64748b;">
           <strong>Global Softworks Innovation</strong><br/>
           📍 Yaoundé, Cameroun<br/>
-          📞 Téléphone : +237 691 862 447 / +237 670 092 318<br/>
-          ✉️ Email : ndzanathomas119@gmail.com<br/>
+          📞 +237 691 862 447 / +237 670 092 318<br/>
+          💬 <a href="https://wa.me/237691862447" style="color: #25D366;">WhatsApp : +237 691 862 447</a><br/>
           🌐 <a href="https://landing-global-softwoks-innovation-eight.vercel.app/" style="color: #0B2A6B;">landing-global-softwoks-innovation-eight.vercel.app</a>
         </div>
       </div>
