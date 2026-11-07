@@ -51,6 +51,8 @@ export default function ProjectDetailPage({ projectId, onOpenQuote }) {
 
   // Trouver si une référence / démo vidéo existe pour ce projet
   const matchedProof = proofReferences.find((ref) => 
+    (project.proofId && ref.id === project.proofId) ||
+    (ref.projectId && String(ref.projectId) === String(project.id)) ||
     ref.title.toLowerCase().includes(project.title.toLowerCase().slice(0, 10)) ||
     (project.client && ref.client.toLowerCase().includes(project.client.toLowerCase().slice(0, 8)))
   );
@@ -161,36 +163,48 @@ export default function ProjectDetailPage({ projectId, onOpenQuote }) {
           {matchedProof && activeMediaMode === 'video' ? (
             <div className="space-y-4">
               <div className="relative rounded-2xl overflow-hidden border border-slate-900 bg-slate-950 h-[320px] sm:h-[450px] lg:h-[520px] shadow-2xl flex items-center justify-center">
-                <img
-                  src={matchedProof.thumbnail || activeImage}
-                  alt={matchedProof.title}
-                  className="w-full h-full object-cover opacity-70"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/40" />
+                {matchedProof.videoUrl ? (
+                  <video
+                    src={matchedProof.videoUrl}
+                    controls
+                    playsInline
+                    poster={matchedProof.thumbnail || activeImage}
+                    className="w-full h-full object-contain bg-black"
+                  />
+                ) : (
+                  <>
+                    <img
+                      src={matchedProof.thumbnail || activeImage}
+                      alt={matchedProof.title}
+                      className="w-full h-full object-cover opacity-70"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/40" />
 
-                <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center z-10">
-                  <div className="w-20 h-20 rounded-full bg-amber-400 text-slate-950 flex items-center justify-center shadow-2xl shadow-amber-400/40 mb-4 hover:scale-110 transition-transform cursor-pointer">
-                    <Play className="w-8 h-8 fill-slate-950 ml-1" />
-                  </div>
-                  <span className="bg-slate-900/90 text-amber-300 border border-amber-400/30 text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full mb-2">
-                    {matchedProof.badge || "Démonstration en direct"}
-                  </span>
-                  <h3 className="text-xl sm:text-2xl font-black text-white max-w-lg mb-2">
-                    {matchedProof.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-slate-300 max-w-md">
-                    {matchedProof.description}
-                  </p>
-                </div>
+                    <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center z-10">
+                      <div className="w-20 h-20 rounded-full bg-amber-400 text-slate-950 flex items-center justify-center shadow-2xl shadow-amber-400/40 mb-4 hover:scale-110 transition-transform cursor-pointer">
+                        <Play className="w-8 h-8 fill-slate-950 ml-1" />
+                      </div>
+                      <span className="bg-slate-900/90 text-amber-300 border border-amber-400/30 text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full mb-2">
+                        {matchedProof.badge || "Démonstration en direct"}
+                      </span>
+                      <h3 className="text-xl sm:text-2xl font-black text-white max-w-lg mb-2">
+                        {matchedProof.title}
+                      </h3>
+                      <p className="text-xs sm:text-sm text-slate-300 max-w-md">
+                        {matchedProof.description}
+                      </p>
+                    </div>
 
-                <div className="absolute bottom-4 left-6 flex items-center gap-2">
-                  <span className="bg-emerald-500 text-slate-950 text-[10px] font-black px-2.5 py-0.5 rounded-full shadow-xs">
-                    Vérifié sur le terrain
-                  </span>
-                  <span className="bg-slate-900/80 text-white text-[10px] font-semibold px-2.5 py-0.5 rounded-full border border-white/20">
-                    {matchedProof.location || "En production"}
-                  </span>
-                </div>
+                    <div className="absolute bottom-4 left-6 flex items-center gap-2">
+                      <span className="bg-emerald-500 text-slate-950 text-[10px] font-black px-2.5 py-0.5 rounded-full shadow-xs">
+                        Vérifié sur le terrain
+                      </span>
+                      <span className="bg-slate-900/80 text-white text-[10px] font-semibold px-2.5 py-0.5 rounded-full border border-white/20">
+                        {matchedProof.location || "En production"}
+                      </span>
+                    </div>
+                  </>
+                )}
               </div>
 
               {/* Points forts de la démo */}

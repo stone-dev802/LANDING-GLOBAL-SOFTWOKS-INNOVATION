@@ -67,7 +67,7 @@ export const servicesData = [
     title: "Installation Caméras & Vidéosurveillance",
     shortDesc: "Pose de caméras IP/HD, enregistreurs NVR/DVR, vision nocturne et visionnage à distance sur smartphone.",
     fullDesc: "Protégez vos locaux professionnels, commerces, entrepôts et résidences grâce à nos solutions de vidéosurveillance haute définition et sécurité électronique. Nous réalisons l'étude de couverture, le câblage dédié, l'installation de caméras intelligentes et la configuration de l'accès direct en temps réel sur smartphone, tablette et PC.",
-    image: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=800&q=80",
+    image: "/projects/cctv/camera-monitoring.jpg",
     features: [
       "Installation de caméras de surveillance IP, dômes, tubes et PTZ (Full HD / 4K)",
       "Configuration d'enregistreurs NVR / DVR & disques durs dédiés surveillance 24/7",
@@ -273,6 +273,33 @@ export const portfolioProjects = [
   },
   {
     id: 3,
+    title: "Installation & Câblage Vidéosurveillance HD / IP",
+    category: "Réseau & Infra",
+    tags: ["Vidéosurveillance", "Caméras IP & Dômes", "CCTV & NVR", "Câblage Structuré", "Monitoring 24/7"],
+    description: "Déploiement complet d'un système de vidéosurveillance haute définition au sein d'un espace commercial de mode : fixation de caméras dômes au plafond, raccordement structuré sur centrale DVR/NVR, configuration de la grille multi-vues et accès direct sécurisé sur smartphone pour la direction.",
+    impact: "Surveillance multi-écrans 24/7 & zéro angle mort",
+    image: "/projects/cctv/camera-monitoring.jpg",
+    status: "Déployé en production",
+    client: "Boutique & Espace Commercial de Mode",
+    year: "2024",
+    role: "Étude d'angles, Pose caméras, Câblage enregistreur NVR, Paramétrage réseau & supervision",
+    challenge: "Sécuriser l'intégralité d'un magasin de mode et des zones d'encaissement tout en préservant l'esthétique du plafond et des moulures, avec un câblage propre et un contrôle en direct sur écran et téléphone.",
+    solution: "Intégration soignée de caméras dômes orientables, passages de câbles invisibles jusqu'à la station de contrôle, et paramétrage de l'enregistreur avec alertes intelligentes.",
+    results: [
+      "Couverture visuelle intégrale des rayons et de la caisse",
+      "Station de monitoring en direct 4 flux simultanés haute fluidité",
+      "Alertes instantanées et consultation vidéo à distance sur mobile"
+    ],
+    gallery: [
+      "/projects/cctv/camera-monitoring.jpg",
+      "/projects/cctv/camera-mount.jpg",
+      "/projects/cctv/camera-cabling.jpg",
+      "/projects/cctv/camera-overview.jpg"
+    ],
+    proofId: "ref-3"
+  },
+  {
+    id: 4,
     title: "Gescam - Gestion Universitaire",
     category: "Web",
     tags: ["React", "Node.js / PHP", "ERP Éducation", "Gestion Académique", "Bases de Données"],
@@ -297,7 +324,7 @@ export const portfolioProjects = [
     ]
   },
   {
-    id: 4,
+    id: 5,
     title: "Gestion des Emprunts & Assistante IA",
     category: "Web",
     tags: ["Gestion Financière", "Assistante IA", "Chatbot / NLP", "Automatisation", "React"],
@@ -322,7 +349,7 @@ export const portfolioProjects = [
     ]
   },
   {
-    id: 5,
+    id: 6,
     title: "Hermès Agent - IA Autonome de Leads",
     category: "IA & Agents",
     tags: ["Hermès Agent", "Agent IA Autonome", "Génération de Leads", "Automatisation", "LLM"],
@@ -347,7 +374,7 @@ export const portfolioProjects = [
     ]
   },
   {
-    id: 6,
+    id: 7,
     title: "Cyber Range - Simulation Kill Chain",
     category: "Cybersécurité",
     tags: ["Cyber Range", "Kill Chain", "Pentesting", "Red Team", "Blue Team", "Simulation"],
@@ -372,7 +399,7 @@ export const portfolioProjects = [
     ]
   },
   {
-    id: 7,
+    id: 8,
     title: "Détection d'Intrusion (IDS Suricata)",
     category: "Cybersécurité",
     tags: ["Suricata", "IDS / IPS", "Analyse Réseau", "Détection Menaces", "SIEM"],
@@ -397,7 +424,7 @@ export const portfolioProjects = [
     ]
   },
   {
-    id: 8,
+    id: 9,
     title: "Réseau d'Entreprise Simulé",
     category: "Réseau & Infra",
     tags: ["Windows Server", "Active Directory", "DNS / DHCP", "GPO", "Sécurité"],
@@ -422,7 +449,7 @@ export const portfolioProjects = [
     ]
   },
   {
-    id: 9,
+    id: 10,
     title: "Maintenance & Dépannage IT (Freelance)",
     category: "Réseau & Infra",
     tags: ["Maintenance IT", "Dépannage", "Windows & Linux", "Support Utilisateur", "Systèmes"],
@@ -447,7 +474,7 @@ export const portfolioProjects = [
     ]
   },
   {
-    id: 10,
+    id: 11,
     title: "AgroLiv",
     category: "Mobile",
     tags: ["React Native", "Node.js", "MongoDB"],
@@ -767,20 +794,29 @@ export const proofReferences = [
   },
   {
     id: "ref-3",
-    title: "Pose de Caméras IP & Centrale NVR 16 Voies",
-    client: "Entrepôt Logistique & Espaces Commerciaux",
+    title: "Pose de Caméras IP, Dômes & Centrale NVR Multi-Écrans",
+    client: "Boutique & Espace Commercial de Mode",
     category: "Vidéosurveillance",
-    type: "photo",
-    badge: "Protection 24/7",
-    thumbnail: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=1200&q=80",
-    description: "Déploiement de caméras dômes et tubes extérieures vision nocturne 4K avec configuration d'accès sécurisé en direct sur smartphones de la direction.",
+    type: "video",
+    badge: "Surveillance Active 24/7",
+    duration: "0:25",
+    videoUrl: "/projects/cctv/camera-demo.mp4",
+    thumbnail: "/projects/cctv/camera-monitoring.jpg",
+    description: "Installation complète d'un système de vidéosurveillance haute définition : pose de caméras dômes discrètes au plafond, câblage structuré DVR/NVR, configuration du monitoring multi-caméras en direct et visionnage sécurisé à distance sur smartphone.",
     highlights: [
-      "Vision nocturne infrarouge longue portée",
-      "Détection intelligente d'intrusion avec alertes mobiles",
-      "Enregistrement continu redondant sur disque dur pro"
+      "Pose soignée de caméras dômes au plafond et aux caisses",
+      "Raccordement et câblage structuré sur centrale NVR professionnelle",
+      "Station de monitoring en direct 4 vues & visionnage mobile à distance"
     ],
+    gallery: [
+      "/projects/cctv/camera-monitoring.jpg",
+      "/projects/cctv/camera-mount.jpg",
+      "/projects/cctv/camera-cabling.jpg",
+      "/projects/cctv/camera-overview.jpg"
+    ],
+    projectId: 3,
     date: "2024",
-    location: "Yaoundé"
+    location: "Yaoundé, Cameroun"
   },
   {
     id: "ref-4",
