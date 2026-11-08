@@ -276,19 +276,19 @@ export const portfolioProjects = [
     title: "Installation & Câblage Vidéosurveillance HD / IP",
     category: "Réseau & Infra",
     tags: ["Vidéosurveillance", "Caméras IP & Dômes", "CCTV & NVR", "Câblage Structuré", "Monitoring 24/7"],
-    description: "Déploiement complet d'un système de vidéosurveillance haute définition au sein d'un espace commercial de mode : fixation de caméras dômes au plafond, raccordement structuré sur centrale DVR/NVR, configuration de la grille multi-vues et accès direct sécurisé sur smartphone pour la direction.",
+    description: "Déploiement complet de systèmes de vidéosurveillance haute définition pour tous types de locaux : bâtiments professionnels, sièges d'entreprises, résidences privées, commerces et entrepôts. Étude personnalisée d'angles de vue, fixation soignée de caméras au plafond, raccordement structuré sur centrale DVR/NVR, monitoring multi-écrans et accès direct sécurisé sur smartphone pour la surveillance en temps réel.",
     impact: "Surveillance multi-écrans 24/7 & zéro angle mort",
     image: "/projects/cctv/camera-monitoring.jpg",
     status: "Déployé en production",
-    client: "Boutique & Espace Commercial de Mode",
+    client: "Bâtiments, Entreprises, Résidences & Commerces",
     year: "2024",
     role: "Étude d'angles, Pose caméras, Câblage enregistreur NVR, Paramétrage réseau & supervision",
-    challenge: "Sécuriser l'intégralité d'un magasin de mode et des zones d'encaissement tout en préservant l'esthétique du plafond et des moulures, avec un câblage propre et un contrôle en direct sur écran et téléphone.",
-    solution: "Intégration soignée de caméras dômes orientables, passages de câbles invisibles jusqu'à la station de contrôle, et paramétrage de l'enregistreur avec alertes intelligentes.",
+    challenge: "Sécuriser efficacement l'ensemble des accès et zones sensibles (bâtiments, bureaux d'entreprise, maisons d'habitation ou espaces commerciaux) avec un câblage propre et invisible, une couverture visuelle totale sans angle mort et un contrôle direct sur smartphone.",
+    solution: "Étude sur mesure de l'architecture du site, intégration de caméras dômes orientables discrètes, passages de câbles soignés jusqu'à la centrale de monitoring, et configuration de la visualisation fluide en direct avec alertes de sécurité.",
     results: [
-      "Couverture visuelle intégrale des rayons et de la caisse",
-      "Station de monitoring en direct 4 flux simultanés haute fluidité",
-      "Alertes instantanées et consultation vidéo à distance sur mobile"
+      "Couverture visuelle intégrale des accès, extérieurs et zones intérieures stratégiques",
+      "Centrale de monitoring multi-écrans professionnelle et enregistrement continu 24/7",
+      "Visionnage et alertes en direct sur smartphone (iOS & Android) pour un contrôle total à distance"
     ],
     gallery: [
       "/projects/cctv/camera-monitoring.jpg",
@@ -816,18 +816,18 @@ export const proofReferences = [
   {
     id: "ref-3",
     title: "Pose de Caméras IP, Dômes & Centrale NVR Multi-Écrans",
-    client: "Boutique & Espace Commercial de Mode",
+    client: "Bâtiments, Entreprises, Résidences & Commerces",
     category: "Vidéosurveillance",
     type: "video",
     badge: "Surveillance Active 24/7",
     duration: "0:25",
     videoUrl: "/projects/cctv/camera-demo.mp4",
     thumbnail: "/projects/cctv/camera-monitoring.jpg",
-    description: "Installation complète d'un système de vidéosurveillance haute définition : pose de caméras dômes discrètes au plafond, câblage structuré DVR/NVR, configuration du monitoring multi-caméras en direct et visionnage sécurisé à distance sur smartphone.",
+    description: "Installation complète et clé en main de systèmes de vidéosurveillance haute définition pour tous types d'infrastructures : bâtiments administratifs, sièges d'entreprises, résidences privées, commerces et entrepôts. Pose discrète de caméras dômes et tubes au plafond, câblage structuré DVR/NVR, monitoring multi-écrans en direct et visionnage sécurisé à distance 24/7 sur smartphone.",
     highlights: [
-      "Pose soignée de caméras dômes au plafond et aux caisses",
-      "Raccordement et câblage structuré sur centrale NVR professionnelle",
-      "Station de monitoring en direct 4 vues & visionnage mobile à distance"
+      "Solutions adaptées aux bâtiments, entreprises, résidences privées & commerces",
+      "Pose soignée de caméras HD/IP (vision nocturne & angles sans zone morte)",
+      "Centrale NVR professionnelle, monitoring multi-écrans & visionnage direct sur smartphone"
     ],
     gallery: [
       "/projects/cctv/camera-monitoring.jpg",
