@@ -15,7 +15,7 @@ import {
   ExternalLink,
   Eye
 } from 'lucide-react';
-import { proofReferences, clientLogos } from '../data/content';
+import { proofReferences } from '../data/content';
 import { Link, useRouter } from '../router';
 
 export default function ProofReferencesSection({ onOpenQuote, title, subtitle, showLogos = true, limit = null }) {
@@ -180,28 +180,6 @@ export default function ProofReferencesSection({ onOpenQuote, title, subtitle, s
             </div>
           ))}
         </div>
-
-        {/* Client / Partner Trust Bar */}
-        {showLogos && (
-          <div className="mt-20 pt-10 border-t border-slate-800/80">
-            <div className="text-center mb-6">
-              <span className="text-xs font-bold uppercase tracking-widest text-slate-400">
-                Déploiements et solutions adoptés par des organisations exigeantes
-              </span>
-            </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-              {clientLogos.map((client, i) => (
-                <div
-                  key={i}
-                  className="bg-slate-900/60 border border-slate-800 rounded-xl p-3.5 text-center flex flex-col items-center justify-center hover:border-sky-500/40 hover:bg-slate-900 transition-all"
-                >
-                  <span className="text-xs font-black text-white mb-0.5">{client.name}</span>
-                  <span className="text-[10px] text-slate-400">{client.role}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
 
       </div>
 
