@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { RouterProvider, useRouter } from './router';
+import { LanguageProvider } from './i18n/LanguageContext';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import QuoteModal from './components/QuoteModal';
 import WhatsAppFloatingButton from './components/WhatsAppFloatingButton';
+import AiAssistantWidget from './components/AiAssistantWidget';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
@@ -51,7 +53,13 @@ function AppContent() {
       <Navbar onOpenQuote={() => openQuote()}/>
       <main className="flex-grow">{renderPage()}</main>
       <Footer onOpenQuote={() => openQuote()}/>
+      
+      {/* ── AI Assistant (Bottom-Left launcher & popup - Image 1) ── */}
+      <AiAssistantWidget onOpenQuote={() => openQuote()} />
+
+      {/* ── Floating WhatsApp & Language Switcher (Bottom-Right - Image 2) ── */}
       <WhatsAppFloatingButton />
+
       <QuoteModal isOpen={quoteOpen} onClose={closeQuote} preselectedService={preselected}/>
     </div>
   );
@@ -59,8 +67,10 @@ function AppContent() {
 
 export default function App() {
   return (
-    <RouterProvider>
-      <AppContent/>
-    </RouterProvider>
+    <LanguageProvider>
+      <RouterProvider>
+        <AppContent/>
+      </RouterProvider>
+    </LanguageProvider>
   );
 }

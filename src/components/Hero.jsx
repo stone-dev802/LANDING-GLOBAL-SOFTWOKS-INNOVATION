@@ -1,8 +1,11 @@
 import React from 'react';
 import { ArrowRight, Play, CheckCircle2, ShieldCheck, Zap, Sparkles, Code2, Server } from 'lucide-react';
 import { heroPillars, companyInfo } from '../data/content';
+import { useLanguage } from '../i18n/LanguageContext';
 
 export default function Hero({ onOpenQuote }) {
+  const { t } = useLanguage();
+
   return (
     <section id="accueil" className="relative pt-28 pb-16 lg:pt-36 lg:pb-24 overflow-hidden bg-gradient-to-b from-sky-50/60 via-white to-slate-50">
       
@@ -22,25 +25,25 @@ export default function Hero({ onOpenQuote }) {
             {/* Pill Tag */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-50 border border-amber-200/80 text-amber-900 text-xs sm:text-sm font-semibold mb-6 shadow-sm">
               <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
-              <span>Votre partenaire tech & digital</span>
+              <span>{t('hero.tag', 'Votre partenaire tech & digital')}</span>
             </div>
 
             {/* Main Headline */}
             <h1 className="text-3xl sm:text-5xl lg:text-[3.25rem] font-extrabold text-navy-900 tracking-tight leading-[1.15] mb-6">
-              Des solutions numériques{' '}
+              {t('hero.title1', 'Des solutions numériques')}{' '}
               <span className="relative whitespace-nowrap">
-                <span className="relative z-10 text-sky-600">sur mesure</span>
+                <span className="relative z-10 text-sky-600">{t('hero.title2', 'sur mesure')}</span>
                 <span className="absolute bottom-1 left-0 right-0 h-3 bg-sky-100 -rotate-1 rounded-sm -z-0" />
               </span>{' '}
-              pour un avenir{' '}
+              {t('hero.title3', 'pour un avenir')}{' '}
               <span className="text-amber-500 underline decoration-amber-300 decoration-wavy decoration-2">
-                plus connecté
+                {t('hero.title4', 'plus connecté')}
               </span>
             </h1>
 
             {/* Subtitle / Description */}
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed mb-8 max-w-2xl">
-              {companyInfo.description}
+              {t('hero.desc', companyInfo.description)}
             </p>
 
             {/* Action Buttons */}
@@ -49,7 +52,7 @@ export default function Hero({ onOpenQuote }) {
                 href="#services"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-amber-400 hover:bg-amber-500 active:scale-95 text-slate-950 font-bold text-sm sm:text-base shadow-lg shadow-amber-500/20 hover:shadow-amber-500/35 transition-all duration-200"
               >
-                <span>Découvrir nos services</span>
+                <span>{t('hero.ctaServices', 'Découvrir nos services')}</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
 
@@ -60,7 +63,7 @@ export default function Hero({ onOpenQuote }) {
                 <div className="w-6 h-6 rounded-full bg-sky-100 text-sky-600 flex items-center justify-center">
                   <Play className="w-3 h-3 fill-current ml-0.5" />
                 </div>
-                <span>Voir notre portfolio</span>
+                <span>{t('hero.ctaPortfolio', 'Voir nos réalisations')}</span>
               </a>
             </div>
 
