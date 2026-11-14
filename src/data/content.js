@@ -7,8 +7,8 @@ export const companyInfo = {
     "Global Softworks Innovation est une équipe de passionnés en technologie, spécialisée dans le développement logiciel, les réseaux, la cybersécurité et le déploiement d'applications. Nous aidons les entreprises et les organisations à innover, se protéger et performer dans le digital.",
   phone: "+237 691 862 447 / +237 670 092 318",
   whatsapp: "237691862447",
-  email: "ndzanathomas119@gmail.com",
-  displayEmail: "ndzanathomas119@gmail.com",
+  email: "globalsoftworksinnovation@gmail.com",
+  displayEmail: "globalsoftworksinnovation@gmail.com",
   address: "Yaoundé, Cameroun",
   hours: "Lun - Ven : 8h - 18h",
   stats: [
@@ -535,7 +535,7 @@ export const teamMembers = [
     image: "/team/dr_stone.png",
     linkedin: "https://github.com/stone-dev802",
     github: "https://github.com/stone-dev802",
-    email: "ndzanathomas119@gmail.com", 
+    email: "globalsoftworksinnovation@gmail.com", 
     badge: "Softworks Engineer and Core Developer",
   },
   {

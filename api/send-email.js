@@ -12,10 +12,10 @@ export default async function handler(req, res) {
   const isQuote = type === 'quote';
   const companySender = {
     name: 'Global Softworks Innovation',
-    email: 'ndzanathomas119@gmail.com',
+    email: 'globalsoftworksinnovation@gmail.com',
   };
 
-  // 1. E-mail pour l'équipe GSI (reçu sur ndzanathomas119@gmail.com)
+  // 1. E-mail pour l'équipe GSI (reçu sur globalsoftworksinnovation@gmail.com)
   const teamSubject = isQuote
     ? `[DEVIS GSI] Nouvelle demande de ${name} ${company ? `(${company})` : ''}`
     : `[CONTACT GSI] ${subject || 'Nouveau message'} de ${name}`;
@@ -139,13 +139,13 @@ export default async function handler(req, res) {
       'Accept': 'application/json',
     };
 
-    // Envoi 1 : Notification interne vers votre boîte ndzanathomas119@gmail.com
+    // Envoi 1 : Notification interne vers votre boîte globalsoftworksinnovation@gmail.com
     const teamEmailReq = fetch('https://api.brevo.com/v3/smtp/email', {
       method: 'POST',
       headers: brevoHeaders,
       body: JSON.stringify({
         sender: companySender,
-        to: [{ email: 'ndzanathomas119@gmail.com', name: 'Global Softworks Innovation' }],
+        to: [{ email: 'globalsoftworksinnovation@gmail.com', name: 'Global Softworks Innovation' }],
         replyTo: { email: email, name: name },
         subject: teamSubject,
         htmlContent: teamHtml,
