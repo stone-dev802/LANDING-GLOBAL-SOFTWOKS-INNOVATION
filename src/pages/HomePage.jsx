@@ -286,7 +286,7 @@ export default function HomePage({ onOpenQuote }) {
               </div>
               {/* Team photo */}
               <div className="rounded-2xl overflow-hidden border border-white/10 h-52 relative">
-                <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&q=80"
+                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=900&q=80"
                      alt="Équipe Global Softworks" className="w-full h-full object-cover"/>
                 <div className="absolute bottom-4 right-4 italic font-bold text-[#FBBF24] text-lg drop-shadow-lg">
                   Des idées au réel !
@@ -411,7 +411,7 @@ export default function HomePage({ onOpenQuote }) {
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative rounded-3xl overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1400&q=80"
+            <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=1400&q=80"
                  alt="CTA banner" className="absolute inset-0 w-full h-full object-cover"/>
             <div className="absolute inset-0 bg-[#0B2A6B]/90"/>
             <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6 p-10 sm:p-14 text-white">

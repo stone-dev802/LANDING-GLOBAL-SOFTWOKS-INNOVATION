@@ -179,7 +179,7 @@ export const servicesData = [
     title: "Formation & Conseil",
     shortDesc: "Accompagnement stratégique, audit de vos systèmes et transfert de compétences.",
     fullDesc: "Montez en compétences et faites les bons choix technologiques grâce à nos consultants.",
-    image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1531497865144-0464ef8fb9a9?w=800&q=80",
     features: [
       "Formations pratiques (Dev, DevOps, Réseau, Sécurité)",
       "Audit stratégique du système d'information",
@@ -228,7 +228,7 @@ export const portfolioProjects = [
     tags: ["Data Lineage", "Banque & Finance", "Big Data", "Sécurité Bancaire", "Gouvernance des Données"],
     description: "Conception et mise en place d'une application permettant de gérer et de suivre un grand volume de données au sein d'Afriland First Bank. Traçabilité de bout en bout des flux financiers, cartographie du cycle de vie des données et conformité bancaire stricte.",
     impact: "Traçabilité & gouvernance critique pour Afriland First Bank",
-    image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80",
     status: "En production",
     client: "Afriland First Bank",
     year: "2024",
@@ -241,7 +241,7 @@ export const portfolioProjects = [
       "Réduction majeure du temps de diagnostic des anomalies financières"
     ],
     gallery: [
-      "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1000&q=80",
+      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1000&q=80",
       "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1000&q=80",
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1000&q=80"
     ]
@@ -253,7 +253,7 @@ export const portfolioProjects = [
     tags: ["React Native", "Google Play Store", "Marketplace", "E-learning", "Mobile Money"],
     description: "Application mobile de marketplace permettant aux utilisateurs de créer, publier et vendre leurs formations en ligne en toute simplicité. Système de paiement intégré, lecture multimédia fluide et gestion des apprenants. Disponible sur Google Play Store.",
     impact: "Disponible sur Google Play Store & monétisation active",
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?w=800&q=80",
     status: "Sur Play Store",
     client: "Turner EdTech",
     year: "2023 - 2024",
@@ -266,8 +266,8 @@ export const portfolioProjects = [
       "Paiements instantanés par Mobile Money & cartes bancaires"
     ],
     gallery: [
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1000&q=80",
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1000&q=80",
+      "https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?w=1000&q=80",
+      "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1000&q=80",
       "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1000&q=80"
     ]
   },
@@ -305,7 +305,7 @@ export const portfolioProjects = [
     tags: ["React", "Node.js / PHP", "ERP Éducation", "Gestion Académique", "Bases de Données"],
     description: "Application web de gestion universitaire complète destinée à faciliter le pilotage d'une université : inscriptions administratives, scolarité, gestion des cursus et emplois du temps, relevés de notes et portail sécurisé pour étudiants et enseignants.",
     impact: "Digitalisation intégrale des processus académiques",
-    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80",
     status: "Déployé",
     client: "Établissements d'Enseignement Supérieur",
     year: "2023",
@@ -318,8 +318,8 @@ export const portfolioProjects = [
       "Automatisation des attestations et relevés académiques"
     ],
     gallery: [
-      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1000&q=80",
-      "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1000&q=80",
+      "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1000&q=80",
+      "https://images.unsplash.com/photo-1577495508048-b635879837f1?w=1000&q=80",
       "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1000&q=80"
     ]
   },
@@ -765,7 +765,7 @@ export const proofReferences = [
     badge: "Production Bancaire",
     duration: "1:45",
     videoUrl: "", // L'utilisateur pourra renseigner le mp4 ou lien direct
-    thumbnail: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1200&q=80",
+    thumbnail: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1200&q=80",
     description: "Démonstration du flux de traçabilité des transactions et cartographie dynamique du cycle de vie des données bancaires en temps réel.",
     highlights: [
       "Traçabilité financière de bout en bout",
@@ -848,7 +848,7 @@ export const proofReferences = [
     badge: "Sur Play Store",
     duration: "2:10",
     videoUrl: "",
-    thumbnail: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80",
+    thumbnail: "https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?w=1200&q=80",
     description: "Parcours utilisateur complet sur l'application Android : recherche de cours, streaming vidéo avec mise en cache locale et paiement par Mobile Money.",
     highlights: [
       "Expérience utilisateur fluide à faible débit",

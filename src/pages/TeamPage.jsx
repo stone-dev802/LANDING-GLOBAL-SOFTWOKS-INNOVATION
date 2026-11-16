@@ -20,7 +20,7 @@ export default function TeamPage({ onOpenQuote }) {
       <section className="relative py-24 bg-[#0B2A6B] overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&q=80"
+            src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1600&q=80"
             alt="Notre équipe" 
             className="w-full h-full object-cover opacity-20"
           />

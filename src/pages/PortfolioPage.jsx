@@ -67,7 +67,7 @@ export default function PortfolioPage({ onOpenQuote }) {
       <section className="relative py-24 bg-[#0B2A6B] overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=1600&q=80"
+            src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1600&q=80"
             alt="Portfolio" 
             className="w-full h-full object-cover opacity-15"
           />
