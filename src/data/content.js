@@ -179,7 +179,7 @@ export const servicesData = [
     title: "Formation & Conseil",
     shortDesc: "Accompagnement stratégique, audit de vos systèmes et transfert de compétences.",
     fullDesc: "Montez en compétences et faites les bons choix technologiques grâce à nos consultants.",
-    image: "https://images.unsplash.com/photo-1531497865144-0464ef8fb9a9?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&q=80",
     features: [
       "Formations pratiques (Dev, DevOps, Réseau, Sécurité)",
       "Audit stratégique du système d'information",
@@ -241,7 +241,7 @@ export const portfolioProjects = [
       "Réduction majeure du temps de diagnostic des anomalies financières"
     ],
     gallery: [
-      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1000&q=80",
+      "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1000&q=80",
       "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1000&q=80",
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1000&q=80"
     ]
@@ -267,7 +267,7 @@ export const portfolioProjects = [
     ],
     gallery: [
       "https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?w=1000&q=80",
-      "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1000&q=80",
+      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1000&q=80",
       "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1000&q=80"
     ]
   },
@@ -320,7 +320,7 @@ export const portfolioProjects = [
     gallery: [
       "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1000&q=80",
       "https://images.unsplash.com/photo-1577495508048-b635879837f1?w=1000&q=80",
-      "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1000&q=80"
+      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1000&q=80"
     ]
   },
   {

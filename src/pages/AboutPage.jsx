@@ -55,7 +55,7 @@ export default function AboutPage({ onOpenQuote }) {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="relative">
-            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=900&q=80"
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=900&q=80"
                  alt="Notre équipe" className="rounded-3xl w-full object-cover h-96 shadow-2xl"/>
             <div className="absolute top-4 left-4 bg-slate-950/80 backdrop-blur-md p-2 rounded-2xl border border-white/20 shadow-xl flex items-center gap-3">
               <img src="/logo.png" alt="Logo GSI" className="w-12 h-12 object-contain rounded-xl" />
